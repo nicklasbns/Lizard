@@ -8,16 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://Scripts/Level.gd"
+} ]
 _global_script_class_icons={
-
+"Level": ""
 }
 
 [application]
 
 config/name="Lizard"
-run/main_scene="res://Scripts/Levels/Square15x15.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Scripts/Menues/mainMenu.tscn"
+boot_splash/image="res://Assets/Icon.png"
+boot_splash/fullsize=false
+config/icon="res://Assets/Icon.png"
+config/windows_native_icon="res://Assets/Icon.ico"
+
+[autoload]
+
+Global="*res://Scripts/global.gd"
+
+[display]
+
+window/stretch/mode="2d"
 
 [input]
 
