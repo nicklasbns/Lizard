@@ -24,13 +24,21 @@ func _ready():
 		button.connect("pressed", self, "_button_pressed",[level])
 		
 		var butVBox := VBoxContainer.new()
-		butVBox.alignment = 1
+		butVBox.alignment = 2
 		butVBox.rect_min_size = button.rect_min_size
 		butVBox.add_child(CenterContainer.new())
 		butVBox.add_child(CenterContainer.new())
 		
+		butVBox.get_child(0).set_mouse_filter(1)
+		butVBox.get_child(1).set_mouse_filter(1)
+		
 		var text := Label.new()
 		text.text = level.get_name()
+		text.rect_min_size.y = butVBox.rect_min_size.y/4
+		if !level.unlocked: text.text += "\n\nprice: " + str(level.price)
+		text.set_mouse_filter(1)
+		
+		butVBox.get_child(1).add_child(text)
 		
 		var textRect := TextureRect.new()
 		var img := Image.new()
@@ -38,13 +46,16 @@ func _ready():
 		img.load("res://icon.png")
 		itex.create_from_image(img)
 		textRect.texture = itex
+		textRect.set_mouse_filter(1)
+		
 		butVBox.get_child(0).add_child(textRect)
-		butVBox.get_child(1).add_child(text)
+		
 		button.add_child(butVBox)
 		hBox.add_child(button)
 		i += 1 #counter for state in loop (grrr gdscript)
 
 func _button_pressed(level):
-	Global.curLvl = level.get_name()
-	get_tree().change_scene("res://Scripts/LevelPlayer.tscn")
-	queue_free()
+	if level.unlocked:
+		Global.curLvl = level.get_name()
+		get_tree().change_scene("res://Scripts/LevelPlayer.tscn")
+		queue_free()
