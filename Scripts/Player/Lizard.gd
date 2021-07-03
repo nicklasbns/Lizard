@@ -1,8 +1,9 @@
 extends Node2D
 
-export var direction:Vector2 = Vector2(0, 64)
+var direction:Vector2 = Vector2(0, 64)
 var lastMove:Vector2 
 var infants:int = 0
+var fruitsEaten:int = 0
 
 func _on_Timer_timeout():
 	var bodyCount:int = $Body/Color.get_child_count()-1
@@ -25,17 +26,16 @@ func _on_Timer_timeout():
 	#If you have slammed head in a wall or a body, then you are dead, but if its an edible, then you are pregnant
 	for area in head.get_overlapping_areas():
 		if area.get_collision_layer_bit(0):
-			get_tree().change_scene("res://Scripts/Menues/mainMenu.tscn")
-			queue_free()
+			death()
 		elif area.get_collision_layer_bit(2):
 			infants += area.nutrition
+			fruitsEaten += 1
 			area.queue_free()
 			
 	#Tilemaps are bodies and not areas
 	for body in head.get_overlapping_bodies():
 		if body.get_collision_layer_bit(1):
-			get_tree().change_scene("res://Scripts/Menues/mainMenu.tscn")
-			queue_free()
+			death()
 	
 	if infants > 0: #if we're expecting, then a kid is born once every move
 		var kid = load("res://Scripts/Player/BodyPart.tscn").instance()
@@ -56,3 +56,11 @@ func _input(event):
 		
 	if ! move == -lastMove: #if the player is stupid enough to go back the way they came
 		direction = move #then we stop them from instantly committing suicide 
+
+func death():
+	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance()
+	deathMenu.set_name("deathMenu")
+	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Label").text = "You died\n But you earned " + str(fruitsEaten) + " coins"
+	Global.coins += fruitsEaten
+	self.get_parent().add_child(deathMenu)
+	queue_free()
