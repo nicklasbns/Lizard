@@ -16,34 +16,35 @@ func _ready():
 		$VBoxContainer.margin_left = $VBoxContainer.rect_size.x/25
 		$VBoxContainer.margin_top = $VBoxContainer.rect_size.y/9
 		$VBoxContainer.add_constant_override("separation", $VBoxContainer.rect_size.y/18)
-		hBox.add_constant_override("separation", $VBoxContainer.rect_size.x/50)
+		hBox.add_constant_override("separation", $VBoxContainer.rect_size.x/50) #gives distance between elements
 		
 		#then we make button
 		var button := Button.new()
 		button.rect_min_size = Vector2($VBoxContainer.rect_size.x/5,$VBoxContainer.rect_size.y/3)
-		button.connect("pressed", self, "_button_pressed",[level])
+		button.connect("pressed", self, "_button_pressed",[level]) #sets the function on button pressed, with parameters in []
 		
-		var butVBox := VBoxContainer.new()
+		var butVBox := VBoxContainer.new() #vbox for image and text
 		butVBox.alignment = 2
 		butVBox.rect_min_size = button.rect_min_size
-		butVBox.add_child(CenterContainer.new())
-		butVBox.add_child(CenterContainer.new())
+		butVBox.add_child(CenterContainer.new()) #centers img
+		butVBox.add_child(CenterContainer.new()) #centers txt
 		
-		butVBox.get_child(0).set_mouse_filter(1)
+		butVBox.get_child(0).set_mouse_filter(1) #makes mouse go through the elements to the button
 		butVBox.get_child(1).set_mouse_filter(1)
 		
 		var text := Label.new()
 		text.text = level.get_name()
 		text.rect_min_size.y = butVBox.rect_min_size.y/4
-		if !level.unlocked: text.text += "\n\nprice: " + str(level.price)
+		if !level.unlocked: text.text += "\n\nprice: " + str(level.price) 
 		text.set_mouse_filter(1)
 		
 		butVBox.get_child(1).add_child(text)
 		
+		#makes images the right way
 		var textRect := TextureRect.new()
 		var img := Image.new()
 		var itex := ImageTexture.new()
-		img.load("res://icon.png")
+		img.load("res://icon.png") #placeholder image
 		itex.create_from_image(img)
 		textRect.texture = itex
 		textRect.set_mouse_filter(1)
@@ -55,11 +56,11 @@ func _ready():
 		i += 1 #counter for state in loop (grrr gdscript)
 
 func _button_pressed(level):
-	if Global.coins >= level.price:
-		level.unlocked = true
+	if Global.coins >= level.price and !level.unlocked: #if we don't own, but can buy it,
+		level.unlocked = true #then we buy it, and pay for it ourself
 		Global.coins -= level.price
 		
-	if level.unlocked:
+	if level.unlocked: #if we do own it, then we play it
 		Global.curLvl = level.get_name()
 		get_tree().change_scene("res://Scripts/LevelPlayer.tscn")
 		queue_free()

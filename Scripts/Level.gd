@@ -21,15 +21,16 @@ func _ready():
 		self.add_child(fruit)
 	
 func _process(delta):
-	if $Fruits.get_child_count() < fruitAmount:
-		var food:Area2D = load("res://Scripts/Fruit.tscn").instance()
+	if $Fruits.get_child_count() < fruitAmount: #If we don't have enough food, then we 
+		var food:Area2D = load("res://Scripts/Fruit.tscn").instance() #add more
 		food.set_position(randPos())
-		while len(food.get_overlapping_areas()) > 0:
-			food.set_position(randPos())
-		$Fruits.add_child(food)
+		
+		while len(food.get_overlapping_areas()) > 0: #don't work, but should prevent
+			food.set_position(randPos())   #food from spawning in player, but frame 
+		$Fruits.add_child(food)   #detection is after two frames have passed so WIP
 		
 		
-func randPos():
+func randPos(): #returns a random vector2 in a grid based on the size of the map
 	return Vector2(
 			(randi() % (size[0]-2) -(size[0]-3)/2) *64,
 			(randi() % (size[1]-2) -(size[1]-3)/2) *64

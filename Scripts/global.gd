@@ -1,6 +1,6 @@
 extends Node
 
-var leftHanded:bool = false
+var leftHanded:bool = false #very important
 
 var coins:int
 

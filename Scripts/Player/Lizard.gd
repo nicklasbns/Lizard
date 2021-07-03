@@ -43,7 +43,7 @@ func _on_Timer_timeout():
 		$Body/Color.add_child(kid)
 		infants -= 1
 		
-func _input(event):
+func _input(event): #input for movement
 	var move:Vector2 = direction
 	if event.is_action_pressed("Up"):
 		move = Vector2(0,-64)
@@ -57,9 +57,8 @@ func _input(event):
 	if ! move == -lastMove: #if the player is stupid enough to go back the way they came
 		direction = move #then we stop them from instantly committing suicide 
 
-func death():
-	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance()
-	deathMenu.set_name("deathMenu")
+func death(): #if we die, then we load the death menu, gain coins equal to fruits gained and
+	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance() #kills player
 	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Label").text = "You died\n But you earned " + str(fruitsEaten) + " coins"
 	Global.coins += fruitsEaten
 	self.get_parent().add_child(deathMenu)
