@@ -55,7 +55,12 @@ func _ready():
 		i += 1 #counter for state in loop (grrr gdscript)
 
 func _button_pressed(level):
+	if Global.coins >= level.price:
+		level.unlocked = true
+		Global.coins -= level.price
+		
 	if level.unlocked:
 		Global.curLvl = level.get_name()
 		get_tree().change_scene("res://Scripts/LevelPlayer.tscn")
 		queue_free()
+		
