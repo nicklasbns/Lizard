@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LizardBody.png-928a7e6da616fad0ad1ea9399eaf4d45.stex"
+path="res://.import/LizardBody.png-4b8bba2cef7e0732c8c3cea34804a4eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/LizardBody.png"
-dest_files=[ "res://.import/LizardBody.png-928a7e6da616fad0ad1ea9399eaf4d45.stex" ]
+source_file="res://Assets/Bodies/LizardBody.png"
+dest_files=[ "res://.import/LizardBody.png-4b8bba2cef7e0732c8c3cea34804a4eb.stex" ]
 
 [params]
 

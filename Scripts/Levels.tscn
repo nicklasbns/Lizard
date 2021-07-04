@@ -533,6 +533,7 @@ __meta__ = {
 }
 size = [ 9, 9 ]
 fruitAmount = 4
+unlocked = false
 price = 2000
 
 [node name="TextureRect" type="TextureRect" parent="Fruit Salad"]

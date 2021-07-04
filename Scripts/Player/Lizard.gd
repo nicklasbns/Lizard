@@ -5,6 +5,16 @@ var lastMove:Vector2
 var infants:int = 0
 var fruitsEaten:int = 0
 
+func _ready():
+	if Global.hat != "none":
+		var textRect := TextureRect.new()
+		var img := Image.new()
+		var itex := ImageTexture.new()
+		img.load("res://Assets/Bodies/" + Global.hat + ".png")
+		itex.create_from_image(img)
+		$Body/Hat.texture = itex
+	$Body/Color.set_modulate(Global.color)
+
 func _on_Timer_timeout():
 	var bodyCount:int = $Body/Color.get_child_count()-1
 	var head:Area2D = $Body/Color.get_child(0)
