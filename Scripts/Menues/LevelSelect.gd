@@ -2,6 +2,8 @@ extends Control
 
 var levels:Node2D = load("res://Scripts/Levels.tscn").instance()
 
+var confirm:bool = false
+
 func _ready():
 	
 	var i:int = 0

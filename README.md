@@ -1,5 +1,9 @@
 > # Patch Notes
 
+# v 0.4
+## New Content
+- Added new level **[Fruid Salad]**
+
 # v 0.3
 ## New Content
 - Added coins, that can be gained by collecting food
