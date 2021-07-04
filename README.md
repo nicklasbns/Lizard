@@ -16,7 +16,7 @@
 
 <br>
 
-# **v 0.3**
+# v 0.3
 ## New Content
 - Added coins, that can be gained by collecting food
 
