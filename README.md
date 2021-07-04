@@ -2,7 +2,7 @@
 
 # v 0.4
 ## New Content
-- Added new level `[Fruid Salad]`
+- Added new level **[Fruid Salad]**
 
 <br>
 
@@ -28,7 +28,7 @@
 <br>
 
 ## Changes
-- `[Advanced]` level price change **(0 → 100)**
+- **[Advanced]** level price change **(0 → 100)**
 
 <br>
 
@@ -36,7 +36,7 @@
 ## New Content
 - Added a title screen
 - Added menu navigation
-- Added new level `[Advanced]`
+- Added new level **[Advanced]**
 
 <br>
 
