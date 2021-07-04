@@ -4,6 +4,9 @@
 ## New Content
 - Added new level **[Fruid Salad]**
 
+
+## Bug Fixed
+- Fixed bug where player didn't spawn in the spawnpoint
 # v 0.3
 ## New Content
 - Added coins, that can be gained by collecting food

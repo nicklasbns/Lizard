@@ -15,7 +15,9 @@ func _ready():
 	self.scale 
 	if self.visible: #only start it, if its the level we are playing
 		#Adding the game elements
-		self.add_child(load("res://Scripts/Player/Lizard.tscn").instance())
+		var player:Node2D = load("res://Scripts/Player/Lizard.tscn").instance()
+		player.position = $Spawnpoint.position
+		self.add_child(player)
 		var fruit = Node2D.new()
 		fruit.set_name("Fruits")
 		self.add_child(fruit)
