@@ -12,7 +12,6 @@ export var price:int = 0
 
 func _ready():
 	randomize() #It aint fun, if its always the same
-	self.scale 
 	if self.visible: #only start it, if its the level we are playing
 		#Adding the game elements
 		var player:Node2D = load("res://Scripts/Player/Lizard.tscn").instance()

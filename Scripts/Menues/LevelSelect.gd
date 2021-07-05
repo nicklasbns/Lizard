@@ -23,7 +23,7 @@ func _ready():
 		#then we make button
 		var button := Button.new()
 		button.rect_min_size = Vector2($VBoxContainer.rect_size.x/5,$VBoxContainer.rect_size.y/3)
-		button.connect("pressed", self, "_button_pressed",[level]) #sets the function on button pressed, with parameters in []
+		var _connect = button.connect("pressed", self, "_button_pressed",[level]) #sets the function on button pressed, with parameters in []
 		
 		var butVBox := VBoxContainer.new() #vbox for image and text
 		butVBox.alignment = 2
@@ -60,6 +60,6 @@ func _button_pressed(level):
 		
 	if level.unlocked: #if we do own it, then we play it
 		Global.curLvl = level.get_name()
-		get_tree().change_scene("res://Scripts/LevelPlayer.tscn")
+		var _change = get_tree().change_scene("res://Scripts/LevelPlayer.tscn")
 		queue_free()
 		
