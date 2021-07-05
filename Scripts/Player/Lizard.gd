@@ -7,7 +7,7 @@ var fruitsEaten:int = 0
 
 func _ready():
 	if Global.hat != "none":
-		$Body/Hat.texture = Global.toImg("res://Assets/Bodies/" + Global.hat + ".png")
+		$Body/Hat.texture = load("res://Assets/Bodies/" + Global.hat + ".png")
 	$Body/Color.set_modulate(Global.color)
 
 func _on_Timer_timeout():

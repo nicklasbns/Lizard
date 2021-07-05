@@ -44,7 +44,7 @@ func _ready():
 		
 		#makes images
 		var textRect := TextureRect.new()
-		textRect.texture = Global.toImg("res://icon.png") #placeholder image
+		textRect.texture = load("res://icon.png") #placeholder image
 		textRect.set_mouse_filter(1)
 		
 		butVBox.get_child(0).add_child(textRect)
