@@ -2,6 +2,7 @@
 
 # v 0.4
 ## New Content
+- Added Android version and control
 - Added new level **[Fruid Salad]**
 - Added shop menu with lots of customizability options
 

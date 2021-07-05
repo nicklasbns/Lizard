@@ -48,15 +48,15 @@ func _on_Timer_timeout():
 		$Body/Color.add_child(kid)
 		infants -= 1
 		
-func _input(event): #input for movement
+func _process(_delta): #input for movement
 	var move:Vector2 = direction
-	if event.is_action_pressed("Up"):
+	if Input.is_action_just_pressed("Up"):
 		move = Vector2(0,-64)
-	elif event.is_action_pressed("Down"):
+	elif Input.is_action_just_pressed("Down"):
 		move = Vector2(0,64)
-	elif event.is_action_pressed("Left"):
+	elif Input.is_action_just_pressed("Left"):
 		move = Vector2(-64,0)
-	elif event.is_action_pressed("Right"):
+	elif Input.is_action_just_pressed("Right"):
 		move = Vector2(64,0)
 		
 	if ! move == -lastMove: #if the player is stupid enough to go back the way they came

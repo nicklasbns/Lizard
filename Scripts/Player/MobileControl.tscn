@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/GrayArrow.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Arrow.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Player/MobileControl.gd" type="Script" id=3]
+[ext_resource path="res://Assets/DPadBack.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Node2D" type="Control"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.05, 1.05 )
+texture = ExtResource( 4 )
+
+[node name="Up" type="TouchScreenButton" parent="."]
+position = Vector2( -32, -96 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+shape = SubResource( 1 )
+
+[node name="Down" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 96 )
+rotation = 3.14159
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+shape = SubResource( 1 )
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2( -96, 32 )
+rotation = -1.5708
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+shape = SubResource( 1 )
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2( 96, -32 )
+rotation = 1.5708
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+shape = SubResource( 1 )
+[connection signal="pressed" from="Up" to="." method="_on_Up_pressed"]
+[connection signal="released" from="Up" to="." method="_on_Up_released"]
+[connection signal="pressed" from="Down" to="." method="_on_Down_pressed"]
+[connection signal="released" from="Down" to="." method="_on_Down_released"]
+[connection signal="pressed" from="Left" to="." method="_on_Left_pressed"]
+[connection signal="released" from="Left" to="." method="_on_Left_released"]
+[connection signal="pressed" from="Right" to="." method="_on_Right_pressed"]
+[connection signal="released" from="Right" to="." method="_on_Right_released"]
