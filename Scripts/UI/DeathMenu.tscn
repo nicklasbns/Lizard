@@ -45,14 +45,12 @@ margin_bottom = 422.0
 rect_min_size = Vector2( 0, 300 )
 alignment = 1
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
-margin_left = 512.0
-margin_top = 106.0
-margin_right = 512.0
-margin_bottom = 194.0
-custom_fonts/font = SubResource( 1 )
-align = 1
-valign = 1
+[node name="Tekst" type="RichTextLabel" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 1024, 300 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 margin_top = 426.0

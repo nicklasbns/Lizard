@@ -64,7 +64,7 @@ func _input(event): #input for movement
 
 func death(): #if we die, then we load the death menu, gain coins equal to fruits gained and
 	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance() #kills player
-	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Label").bbcode_text = "[Center] You died\n But you earned " + str(fruitsEaten) + " coins"
+	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] You died\n\n But you earned " + str(fruitsEaten) + " coins")
 	Global.coins += fruitsEaten
 	self.get_parent().add_child(deathMenu)
 	queue_free()

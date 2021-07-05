@@ -22,7 +22,7 @@ func _ready():
 		fruit.set_name("Fruits")
 		self.add_child(fruit)
 	
-func _process(delta):
+func _process(_delta):
 	if $Fruits.get_child_count() < fruitAmount: #If we don't have enough food, then we 
 		var food:Area2D = load("res://Scripts/Fruit.tscn").instance() #add more
 		food.set_position(randPos())
