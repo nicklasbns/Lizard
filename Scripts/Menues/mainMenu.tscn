@@ -6,9 +6,7 @@
 [ext_resource path="res://Scripts/UI/ResourceIndicator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Play.png" type="Texture" id=5]
 [ext_resource path="res://Assets/ShopIcon.png" type="Texture" id=6]
-
-[sub_resource type="StyleBoxTexture" id=1]
-region_rect = Rect2( 252, 112, 0, 0 )
+[ext_resource path="res://Assets/SettingsIcon.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
@@ -47,15 +45,14 @@ margin_bottom = 300.0
 rect_min_size = Vector2( 514, 300 )
 
 [node name="Play" type="Button" parent="VSplitContainer/HBoxContainer/CenterContainer"]
-margin_left = 193.0
-margin_top = 86.0
-margin_right = 321.0
-margin_bottom = 214.0
+margin_left = 187.0
+margin_top = 83.0
+margin_right = 327.0
+margin_bottom = 217.0
 rect_min_size = Vector2( 125, 50 )
-custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
 icon = ExtResource( 5 )
-clip_text = true
+flat = true
 
 [node name="CenterContainer2" type="CenterContainer" parent="VSplitContainer/HBoxContainer"]
 margin_left = 518.0
@@ -79,5 +76,17 @@ current = true
 [node name="Control" parent="." instance=ExtResource( 4 )]
 margin_right = 0.0
 margin_bottom = 0.0
+
+[node name="Settings" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 142.0
+icon = ExtResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="VSplitContainer/HBoxContainer/CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VSplitContainer/HBoxContainer/CenterContainer2/Shop" to="." method="_on_Shop_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
