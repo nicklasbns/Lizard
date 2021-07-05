@@ -7,12 +7,7 @@ var fruitsEaten:int = 0
 
 func _ready():
 	if Global.hat != "none":
-		var textRect := TextureRect.new()
-		var img := Image.new()
-		var itex := ImageTexture.new()
-		img.load("res://Assets/Bodies/" + Global.hat + ".png")
-		itex.create_from_image(img)
-		$Body/Hat.texture = itex
+		$Body/Hat.texture = Global.toImg("res://Assets/Bodies/" + Global.hat + ".png")
 	$Body/Color.set_modulate(Global.color)
 
 func _on_Timer_timeout():
@@ -69,7 +64,7 @@ func _input(event): #input for movement
 
 func death(): #if we die, then we load the death menu, gain coins equal to fruits gained and
 	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance() #kills player
-	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Label").text = "You died\n But you earned " + str(fruitsEaten) + " coins"
+	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Label").bbcode_text = "[Center] You died\n But you earned " + str(fruitsEaten) + " coins"
 	Global.coins += fruitsEaten
 	self.get_parent().add_child(deathMenu)
 	queue_free()

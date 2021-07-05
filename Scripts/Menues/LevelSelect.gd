@@ -42,13 +42,9 @@ func _ready():
 		
 		butVBox.get_child(1).add_child(text)
 		
-		#makes images the right way
+		#makes images
 		var textRect := TextureRect.new()
-		var img := Image.new()
-		var itex := ImageTexture.new()
-		img.load("res://icon.png") #placeholder image
-		itex.create_from_image(img)
-		textRect.texture = itex
+		textRect.texture = Global.toImg("res://icon.png") #placeholder image
 		textRect.set_mouse_filter(1)
 		
 		butVBox.get_child(0).add_child(textRect)

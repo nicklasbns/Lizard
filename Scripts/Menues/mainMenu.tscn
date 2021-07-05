@@ -7,10 +7,10 @@
 [ext_resource path="res://Assets/Play.png" type="Texture" id=5]
 [ext_resource path="res://Assets/ShopIcon.png" type="Texture" id=6]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 region_rect = Rect2( 252, 112, 0, 0 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 2 )
 
@@ -52,8 +52,8 @@ margin_top = 86.0
 margin_right = 321.0
 margin_bottom = 214.0
 rect_min_size = Vector2( 125, 50 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 icon = ExtResource( 5 )
 clip_text = true
 
@@ -80,3 +80,4 @@ current = true
 margin_right = 0.0
 margin_bottom = 0.0
 [connection signal="pressed" from="VSplitContainer/HBoxContainer/CenterContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VSplitContainer/HBoxContainer/CenterContainer2/Shop" to="." method="_on_Shop_pressed"]
