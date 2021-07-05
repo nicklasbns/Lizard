@@ -3,11 +3,13 @@
 # v 0.4
 ## New Content
 - Added new level **[Fruid Salad]**
+- Added shop menu with lots of customizability options
 
 <br>
 
 ## Minor improvements
 - Added icons to start sceen
+- Back button to help navigate menus
 
 <br>
 
