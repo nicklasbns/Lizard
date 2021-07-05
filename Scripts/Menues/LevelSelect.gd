@@ -16,13 +16,13 @@ func _ready():
 		
 		#design
 		$VBoxContainer.margin_left = $VBoxContainer.rect_size.x/25
-		$VBoxContainer.margin_top = $VBoxContainer.rect_size.y/9
+		$VBoxContainer.margin_top = $VBoxContainer.rect_size.y/9 + 80 #80 is to make space for back button
 		$VBoxContainer.add_constant_override("separation", $VBoxContainer.rect_size.y/18)
 		hBox.add_constant_override("separation", $VBoxContainer.rect_size.x/50) #gives distance between elements
 		
 		#then we make button
 		var button := Button.new()
-		button.rect_min_size = Vector2($VBoxContainer.rect_size.x/5,$VBoxContainer.rect_size.y/3)
+		button.rect_min_size = Vector2($VBoxContainer.rect_size.x/5,$VBoxContainer.rect_size.y/3 -40) #40 is ro ofset the amount added to back button
 		var _connect = button.connect("pressed", self, "_button_pressed",[level]) #sets the function on button pressed, with parameters in []
 		
 		var butVBox := VBoxContainer.new() #vbox for image and text
