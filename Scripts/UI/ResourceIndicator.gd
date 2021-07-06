@@ -5,4 +5,4 @@ func _ready():
 	self.anchor_top =  0.01
 
 func _process(_delta): #indicate how many coins we have
-	$VBoxContainer/HBoxContainer/Label.text = str(Global.coins)
+	$VBoxContainer/HBoxContainer/Label.text = str(Global.currencies["coins"])

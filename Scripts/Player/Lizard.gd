@@ -6,9 +6,8 @@ var infants:int = 0
 var fruitsEaten:int = 0
 
 func _ready():
-	if Global.hat != "none":
-		$Body/Hat.texture = load("res://Assets/Bodies/" + Global.hat + ".png")
-	$Body/Color.set_modulate(Global.color)
+	$Body/Hat.texture = load("res://Assets/Bodies/" + Global.cosmetics["hat"] + ".png")
+	$Body/Color.set_modulate(Global.cosmetics["color"])
 
 func _on_Timer_timeout():
 	var bodyCount:int = $Body/Color.get_child_count()-1
@@ -65,6 +64,6 @@ func _process(_delta): #input for movement
 func death(): #if we die, then we load the death menu, gain coins equal to fruits gained and
 	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance() #kills player
 	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] You died\n\n But you earned " + str(fruitsEaten) + " coins")
-	Global.coins += fruitsEaten
+	Global.currencies["coins"] += fruitsEaten
 	self.get_parent().add_child(deathMenu)
 	queue_free()

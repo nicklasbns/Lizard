@@ -2,15 +2,18 @@ extends Node
 
 var leftHanded:bool = false #very important
 
-var coins:int
+
+var currencies := {
+	"coins":0,
+	}
 
 var curLvl := "Beginner"
 
 
 #cosmetics
-
-var hat := "none"
-
-var body := "LizardBody"
-
-var color := "387f2e"
+var cosmetics = {
+	"hat":"none",
+	"body":"LizardBody",
+	"color": "387f2e",
+	"face": "NeutralFace"
+}

@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/UI/CosmeticBuyOption.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Bodies/LizardBody.png" type="Texture" id=2]
+[ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="CosmeticBuyOption" type="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -794.0
+margin_bottom = -350.0
+rect_min_size = Vector2( 230, 250 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.99998
+margin_bottom = -2.00002
+custom_constants/separation = 32
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 12.0
+margin_right = 232.0
+margin_bottom = 140.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CenterContainer"]
+show_behind_parent = true
+margin_left = 52.0
+margin_right = 180.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 172.0
+margin_right = 232.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center] Unlocked"
+text = " Unlocked"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_BuyOption_pressed"]

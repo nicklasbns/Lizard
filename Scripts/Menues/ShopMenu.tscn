@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/BackArrow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/UI/CosmeticBuyOption.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.901961, 0.654902, 0.0705882, 1 )
@@ -71,6 +72,24 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
+[node name="CosmeticBuyOption" parent="TabContainer/Body" instance=ExtResource( 3 )]
+unlocked = true
+value = "LizardBody"
+
+[node name="Color" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 63.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="CosmeticBuyOption" parent="TabContainer/Color" instance=ExtResource( 3 )]
+unlocked = true
+property = "color"
+value = "387f2e"
+
 [node name="Face" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
@@ -80,6 +99,11 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
+[node name="CosmeticBuyOption" parent="TabContainer/Face" instance=ExtResource( 3 )]
+unlocked = true
+property = "face"
+value = "NeutralFace"
+
 [node name="Hats" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
@@ -88,3 +112,8 @@ margin_left = 4.0
 margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
+
+[node name="CosmeticBuyOption" parent="TabContainer/Hats" instance=ExtResource( 3 )]
+unlocked = true
+property = "hat"
+value = "none"
