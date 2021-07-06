@@ -34,6 +34,7 @@ __meta__ = {
 margin_top = 12.0
 margin_right = 232.0
 margin_bottom = 140.0
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/CenterContainer"]
 show_behind_parent = true

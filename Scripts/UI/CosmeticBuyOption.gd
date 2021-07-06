@@ -2,7 +2,7 @@ extends Button
 
 export var price:int
 
-export(String, "coins") var currency
+export(String, "coins") var currency = "coins"
 
 export var unlocked:bool
 
@@ -39,11 +39,13 @@ func _ready():
 		textureNodeHat.rect_min_size = Vector2(128, 128)
 		textureNodeHat.expand = true
 		textureNodeFace.add_child(textureNodeHat)
-		
+	
+	
+func _draw():
 	updateText()
 	
 func _on_BuyOption_pressed():
-	if !unlocked and price > Global.currencies[currency]:
+	if !unlocked and price <= Global.currencies[currency]:
 		Global.currencies[currency] -= price
 		unlocked = true
 	if unlocked:
@@ -52,12 +54,13 @@ func _on_BuyOption_pressed():
 
 
 func updateText():
-	#if Global.cosmetics[property] == value:
-		#$VBoxContainer/RichTextLabel.bbcode_text = "[center] Selected"
-	if unlocked:
-		$VBoxContainer/RichTextLabel.bbcode_text = "[center] Unlocked"
-	else:
-		$VBoxContainer/RichTextLabel.bbcode_text = "[center] Price"
+	for child in self.get_parent().get_children():
+		if Global.cosmetics[child.property] == child.value:
+			child.get_node("VBoxContainer/RichTextLabel").bbcode_text = "[center] Selected"
+		elif child.unlocked:
+			child.get_node("VBoxContainer/RichTextLabel").bbcode_text = "[center] Unlocked"
+		else:
+			child.get_node("VBoxContainer/RichTextLabel").bbcode_text = "[center] Price: " + str(child.price)
 	
 	
 	

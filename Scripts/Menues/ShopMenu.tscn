@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/BackArrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/UI/CosmeticBuyOption.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/UI/ResourceIndicator.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.901961, 0.654902, 0.0705882, 1 )
@@ -72,9 +73,27 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="CosmeticBuyOption" parent="TabContainer/Body" instance=ExtResource( 3 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Body"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Body/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
+
+[node name="LizardBody" parent="TabContainer/Body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
 unlocked = true
 value = "LizardBody"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Body/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
 
 [node name="Color" type="Tabs" parent="TabContainer"]
 visible = false
@@ -85,10 +104,49 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="CosmeticBuyOption" parent="TabContainer/Color" instance=ExtResource( 3 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Color"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Color/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
+
+[node name="Green" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
 unlocked = true
 property = "color"
 value = "387f2e"
+
+[node name="Red" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
+price = 20
+property = "color"
+value = "b81706"
+
+[node name="Cyan" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
+price = 20
+property = "color"
+value = "06a0b8"
+
+[node name="Pink" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
+price = 100
+property = "color"
+value = "cf1dc6"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Color/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
 
 [node name="Face" type="Tabs" parent="TabContainer"]
 visible = false
@@ -99,10 +157,28 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="CosmeticBuyOption" parent="TabContainer/Face" instance=ExtResource( 3 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Face"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Face/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
+
+[node name="NeutralFace" parent="TabContainer/Face/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
 unlocked = true
 property = "face"
 value = "NeutralFace"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Face/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
 
 [node name="Hats" type="Tabs" parent="TabContainer"]
 visible = false
@@ -113,7 +189,27 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="CosmeticBuyOption" parent="TabContainer/Hats" instance=ExtResource( 3 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Hats"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Hats/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
+
+[node name="None" parent="TabContainer/Hats/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
 unlocked = true
 property = "hat"
 value = "none"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Hats/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
+
+[node name="Control2" parent="." instance=ExtResource( 4 )]
