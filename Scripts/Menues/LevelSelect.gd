@@ -54,9 +54,6 @@ func _ready():
 		i += 1 #counter for state in loop (grrr gdscript)
 
 func _button_pressed(level):
-	print("fisk")
-	print(level.currency)
-	print(Global.currencies)
 	if Global.currencies[level.currency] >= level.price and !level.unlocked: #if we don't own, but can buy it,
 		level.unlocked = true #then we buy it, and pay for it ourself
 		Global.currencies[level.currency] -= level.price

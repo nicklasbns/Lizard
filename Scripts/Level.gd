@@ -10,6 +10,8 @@ export var unlocked:bool = true
 
 export var price:int = 0
 
+var :bool = false
+
 export(String, "coins") var currency = "coins"
 
 func _ready():
