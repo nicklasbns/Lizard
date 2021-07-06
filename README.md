@@ -5,6 +5,7 @@
 - Added Android version and control
 - Added new level **[Fruid Salad]**
 - Added shop menu with customizability options
+- Added 3 new colors
 - Added settings menu
 - Added lefthanded mode
 
