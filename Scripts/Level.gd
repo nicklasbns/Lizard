@@ -10,7 +10,7 @@ export var unlocked:bool = true
 
 export var price:int = 0
 
-var :bool = false
+var alreadyContinued:bool = false
 
 export(String, "coins") var currency = "coins"
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/DeathMenu.gd" type="Script" id=2]
-[ext_resource path="res://admob-lib/admob.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -76,11 +75,5 @@ margin_bottom = 51.0
 rect_min_size = Vector2( 250, 50 )
 custom_fonts/font = SubResource( 2 )
 text = "Continue"
-
-[node name="AdMob" type="Node" parent="ColorRect/VBoxContainer/HBoxContainer2/Continue"]
-script = ExtResource( 3 )
-is_real = true
-rewarded_id = "ca-app-pub-1885419653497441/2655259672"
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer2/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer2/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="rewarded" from="ColorRect/VBoxContainer/HBoxContainer2/Continue/AdMob" to="." method="_on_AdMob_rewarded"]

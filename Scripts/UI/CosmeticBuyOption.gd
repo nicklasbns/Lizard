@@ -6,7 +6,7 @@ export(String, "coins") var currency = "coins"
 
 export var unlocked:bool
 
-export(String, "body", "color", "face", "hat") var property
+export(String, "body", "color", "face", "hat") var property = "body"
 
 export var value:String
 
