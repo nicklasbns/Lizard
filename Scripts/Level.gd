@@ -12,6 +12,8 @@ export var price:int = 0
 
 var alreadyContinued:bool = false
 
+signal loaded
+
 export(String, "coins") var currency = "coins"
 
 func _ready():

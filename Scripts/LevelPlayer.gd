@@ -14,6 +14,11 @@ func _ready(): #we load the level that we want to play, and transfers parrents
 	$AdMob.load_rewarded_video()
 
 
-
-func _on_AdMob_rewarded(currency, ammount):
+func _on_AdMob_rewarded(_currency, _ammount):
+	self.get_node(level.get_name()).get_node("Lizard").respawn()
 	self.get_node(level.get_name()).get_node("DeathMenu").visible = false
+
+
+func _on_AdMob_rewarded_video_loaded():
+	self.get_node(level.get_name()).get_node("DeathMenu").get_node("ColorRect/VBoxContainer/HBoxContainer2/Continue").visible = true
+
