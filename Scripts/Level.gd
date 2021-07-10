@@ -55,7 +55,7 @@ func _ready():
 	
 func _process(_delta):
 	if loaded:
-		if $Fruits.get_child_count() >= fruitAmount-1: #If we don't have enough food, then we 
+		if $Fruits.get_child_count() < fruitAmount: #If we don't have enough food, then we 
 			var food:Area2D = load("res://Scripts/Fruit.tscn").instance() #add more
 			var pos:Vector2 = randPos()
 			
