@@ -19,6 +19,7 @@
 
 ## Bug Fixed
 - Fixed bug where player didn't spawn in the spawnpoint
+- Fixed bug where 
 
 <br>
 

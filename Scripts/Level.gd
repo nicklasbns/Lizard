@@ -26,18 +26,20 @@ func _ready():
 	
 	#We "load" the map by logging all posible positions
 	var mapper:Area2D = load("res://Scripts/Tools/Mapper.tscn").instance()
-	$Area2D.add_child(mapper)
-	mapper.position = $Area2D.position
+	$Map.add_child(mapper)
+	mapper.position = $Map.position
 	progress[1] = size[0]
 	for x in size[0]:
 		for y in size[1]:
 			mapper.position = Vector2(x*64,y*64)
 			yield(get_tree(), "physics_frame")
 			yield(get_tree(), "physics_frame")
-			if mapper.get_collision_layer_bit(3):
-				mapPos.push_back(mapper.position-$Area2D.position)
+			for area in mapper.get_overlapping_areas():
+				if area.get_name() == "Map":
+					mapPos.push_back(mapper.position+$Map.position)
 		progress[0] = x
 	loaded = true
+	print(mapPos)
 	self.get_parent().get_node("CenterContainer").queue_free()
 	
 	player = load("res://Scripts/Player/Lizard.tscn").instance()
@@ -53,17 +55,23 @@ func _ready():
 	
 func _process(_delta):
 	if loaded:
-		if $Fruits.get_child_count() < fruitAmount: #If we don't have enough food, then we 
+		if $Fruits.get_child_count() >= fruitAmount-1: #If we don't have enough food, then we 
 			var food:Area2D = load("res://Scripts/Fruit.tscn").instance() #add more
-			food.set_position(randPos())
+			var pos:Vector2 = randPos()
 			
-			while len(food.get_overlapping_areas()) > 0: #don't work, but should prevent
-				food.set_position(randPos())   #food from spawning in player, but frame 
-			$Fruits.add_child(food)   #detection is after two frames have passed so WIP
+			var playerBodyPos := []
+			for body in player.get_node("Body/Color").get_children():
+				playerBodyPos.push_back(body.position) #logging all body positions
+				
+				
+			while playerBodyPos.has(pos) or !mapPos.has(pos): #if the friut is in player
+				pos = randPos() #or not in map, then we get new position for fruit
+			food.set_position(pos)
+			$Fruits.add_child(food)   
 			
 		
 func randPos(): #returns a random vector2 in a grid based on the size of the map
 	return Vector2(
-			(randi() % (size[0]-2) -(size[0]-3)/2) *64,
-			(randi() % (size[1]-2) -(size[1]-3)/2) *64
+			(randi() % (size[0]) -(size[0]-1)/2) *64,
+			(randi() % (size[1]) -(size[1]-1)/2) *64
 			)

@@ -456,7 +456,6 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Beginner" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
@@ -490,13 +489,12 @@ tile_data = PoolIntArray( -327686, 0, 4, -327685, 0, 196609, -327684, 0, 196609,
 current = true
 zoom = Vector2( 2, 2 )
 
-[node name="Area2D" type="Area2D" parent="Beginner"]
+[node name="Map" type="Area2D" parent="Beginner"]
 position = Vector2( -320, -320 )
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beginner/Area2D"]
-build_mode = 1
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beginner/Map"]
 polygon = PoolVector2Array( -32, -32, -32, 672, 672, 672, 672, -32 )
 
 [node name="Advanced" type="Node2D" parent="."]
@@ -536,17 +534,16 @@ tile_data = PoolIntArray( -458760, 0, 4, -458759, 0, 196609, -458758, 0, 196609,
 current = true
 zoom = Vector2( 2, 2 )
 
-[node name="Area2D" type="Area2D" parent="Advanced"]
+[node name="Map" type="Area2D" parent="Advanced"]
 position = Vector2( -448, -448 )
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Advanced/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Advanced/Map"]
 build_mode = 1
 polygon = PoolVector2Array( -32, -32, -32, 928, 928, 928, 928, -32 )
 
 [node name="Fruit Salad" type="Node2D" parent="."]
-visible = false
 position = Vector2( 4160, 0 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -584,11 +581,11 @@ tile_data = PoolIntArray( -262149, 0, 4, -262148, 0, 196609, -262147, 0, 196609,
 current = true
 zoom = Vector2( 2, 2 )
 
-[node name="Area2D" type="Area2D" parent="Fruit Salad"]
+[node name="Map" type="Area2D" parent="Fruit Salad"]
 position = Vector2( -256, -256 )
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fruit Salad/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fruit Salad/Map"]
 build_mode = 1
 polygon = PoolVector2Array( -32, -32, -32, 544, 544, 544, 544, -32 )
