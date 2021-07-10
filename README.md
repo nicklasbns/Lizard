@@ -19,7 +19,7 @@
 
 ## Bug Fixed
 - Fixed bug where player didn't spawn in the spawnpoint
-- Fixed bug where 
+- Fixed bug where fruit spawned inside the player
 
 <br>
 
