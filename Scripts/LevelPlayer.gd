@@ -12,6 +12,11 @@ func _ready(): #we load the level that we want to play, and transfers parrents
 		if Global.leftHanded: $dPad.rect_position = Vector2(-800,352)
 		else: $dPad.rect_position = Vector2(800,352)
 	$AdMob.load_rewarded_video()
+	$CenterContainer/VBoxContainer/ProgressBar.max_value = level.progress[1]
+
+func _process(_delta):
+	if !level.loaded:
+		$CenterContainer/VBoxContainer/ProgressBar.value = level.progress[0]
 
 
 func _on_AdMob_rewarded(_currency, _ammount):
