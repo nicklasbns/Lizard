@@ -4,7 +4,7 @@ var leftHanded:bool = false #very important
 
 
 var currencies := {
-	"coins":10000,
+	"coins":0,
 	}
 
 var curLvl := "Beginner"
