@@ -4,9 +4,11 @@ var levels = load("res://Scripts/Levels.tscn").instance()
 var level
 
 func _ready(): #we load the level that we want to play, and transfers parrents 
+	for kid in levels.get_children(): kid.visible = false #Hiding all the kids away
 	level = levels.get_node(Global.curLvl)
 	levels.remove_child(level)
 	add_child(level)
+	level.set_position(self.get_position())
 	if OS.get_name() == "Android":
 		$dPad.visible = true
 		if Global.leftHanded: $dPad.rect_position = Vector2(-800,352)

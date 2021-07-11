@@ -6,6 +6,10 @@ export var size := [15,15]
 
 export var fruitAmount:int = 1
 
+export var fruitTypes = {
+	"waterMelon":true,
+}
+
 export var unlocked:bool = true
 
 export var price:int = 0
@@ -23,23 +27,25 @@ var loaded:bool
 var player:Node2D
 func _ready():
 	randomize() #It aint fun, if its always the same
-	
-	#We "load" the map by logging all posible positions
-	var mapper:Area2D = load("res://Scripts/Tools/Mapper.tscn").instance()
-	$Map.add_child(mapper)
-	mapper.position = $Map.position
-	progress[1] = size[0]
-	for x in size[0]:
-		for y in size[1]:
-			mapper.position = Vector2(x*64,y*64)
-			yield(get_tree(), "physics_frame")
-			yield(get_tree(), "physics_frame")
-			for area in mapper.get_overlapping_areas():
-				if area.get_name() == "Map":
-					mapPos.push_back(mapper.position+$Map.position)
-		progress[0] = x
+	#if all the data is saved globally, then we use that
+	if self.get_name() in Global.levelMapData: mapPos = Global.levelMapData[self.get_name()]
+	else: 
+		#else we "load" the map by logging all posible positions
+		var mapper:Area2D = load("res://Scripts/Tools/Mapper.tscn").instance()
+		$Map.add_child(mapper)
+		mapper.position = $Map.position
+		progress[1] = size[0]
+		for x in size[0]:
+			for y in size[1]:
+				mapper.position = Vector2(x*64,y*64)
+				yield(get_tree(), "physics_frame")
+				yield(get_tree(), "physics_frame")
+				for area in mapper.get_overlapping_areas():
+					if area.get_name() == "Map":
+						mapPos.push_back(mapper.position+$Map.position)
+			progress[0] = x
+	Global.levelMapData[self.get_name()] = mapPos
 	loaded = true
-	print(mapPos)
 	self.get_parent().get_node("CenterContainer").queue_free()
 	
 	player = load("res://Scripts/Player/Lizard.tscn").instance()
@@ -56,7 +62,18 @@ func _ready():
 func _process(_delta):
 	if loaded:
 		if $Fruits.get_child_count() < fruitAmount: #If we don't have enough food, then we 
+			for i in fruitTypes.keys():
+				if !fruitTypes[i]: fruitTypes.erase(i) #deleting all the types we haven't selected
+			
+			var selectedFruit
+			var pool := []
+			for fruit in fruitTypes.keys():
+				for i in Global.fruits[fruit].dropChance:
+					pool.push_back(fruit)
+			selectedFruit = pool[randi() % pool.size()]
 			var food:Area2D = load("res://Scripts/Fruit.tscn").instance() #add more
+			food.get_node("Sprite").texture = load(Global.fruits[selectedFruit].image)
+			food.nutrition = Global.fruits[selectedFruit].nutrition
 			var pos:Vector2 = randPos()
 			
 			var playerBodyPos := []

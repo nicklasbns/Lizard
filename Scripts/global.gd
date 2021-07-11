@@ -9,6 +9,13 @@ var currencies := {
 
 var curLvl := "Beginner"
 
+var fruits = {
+	"waterMelon": {
+		"dropChance": 50,
+		"nutrition": 1,
+		"image": "res://Assets/Fruits/Watermelon.png"
+	}
+}
 
 #cosmetics
 var cosmetics = {
@@ -16,4 +23,8 @@ var cosmetics = {
 	"body":"LizardBody",
 	"color": "387f2e",
 	"face": "NeutralFace"
+}
+
+var levelMapData = {
+
 }

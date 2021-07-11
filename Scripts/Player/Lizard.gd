@@ -14,7 +14,7 @@ func _ready():
 	deathMenu.visible = false
 	deathMenu.set_name("deathMenu")
 	self.get_parent().add_child(deathMenu)
-	#$Timer.start()
+	$Timer.start()
 
 func _on_Timer_timeout():
 	var bodyCount:int = $Body/Color.get_child_count()-1

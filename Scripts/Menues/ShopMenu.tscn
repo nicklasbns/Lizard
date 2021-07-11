@@ -162,22 +162,28 @@ margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 25
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Face/VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 230.0
+margin_bottom = 250.0
 custom_constants/separation = 20
 
 [node name="NeutralFace" parent="TabContainer/Face/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 190.0
-margin_bottom = 210.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 230.0
+margin_bottom = 250.0
 unlocked = true
 property = "face"
 value = "NeutralFace"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Face/VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = 275.0
+margin_right = 230.0
+margin_bottom = 275.0
 custom_constants/separation = 20
 
 [node name="Hats" type="Tabs" parent="TabContainer"]
