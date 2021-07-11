@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/BackArrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/UI/CosmeticBuyOption.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/UI/ResourceIndicator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Menues/ShopMenu.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.901961, 0.654902, 0.0705882, 1 )
@@ -31,6 +32,7 @@ font_data = ExtResource( 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -65,7 +67,7 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="Body" type="Tabs" parent="TabContainer"]
+[node name="body" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -74,35 +76,35 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Body"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/body"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 25
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Body/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/body/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 20
 
-[node name="LizardBody" parent="TabContainer/Body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="LizardBody" parent="TabContainer/body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_right = 190.0
 margin_bottom = 210.0
 unlocked = true
 value = "LizardBody"
 
-[node name="Arrows" parent="TabContainer/Body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Arrows" parent="TabContainer/body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_right = 190.0
 margin_bottom = 210.0
 price = 50
 value = "Arrows"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Body/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/body/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 20
 
-[node name="Color" type="Tabs" parent="TabContainer"]
+[node name="color" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -111,18 +113,18 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Color"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/color"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 25
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Color/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/color/VBoxContainer"]
 margin_right = 980.0
 margin_bottom = 250.0
 custom_constants/separation = 20
 
-[node name="Green" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="387f2e" parent="TabContainer/color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 230.0
@@ -131,7 +133,7 @@ unlocked = true
 property = "color"
 value = "387f2e"
 
-[node name="Red" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="b81706" parent="TabContainer/color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 250.0
@@ -141,7 +143,7 @@ price = 20
 property = "color"
 value = "b81706"
 
-[node name="Yellow" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="fcd71e" parent="TabContainer/color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 275.0
@@ -151,7 +153,7 @@ price = 20
 property = "color"
 value = "fcd71e"
 
-[node name="Brown" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="783e00" parent="TabContainer/color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 750.0
@@ -162,13 +164,13 @@ price = 20
 property = "color"
 value = "783e00"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Color/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/color/VBoxContainer"]
 margin_top = 275.0
 margin_right = 980.0
 margin_bottom = 525.0
 custom_constants/separation = 20
 
-[node name="Cyan" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+[node name="06a0b8" parent="TabContainer/color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 500.0
@@ -179,7 +181,7 @@ price = 50
 property = "color"
 value = "06a0b8"
 
-[node name="Gray" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+[node name="575757" parent="TabContainer/color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 250.0
@@ -189,7 +191,7 @@ price = 50
 property = "color"
 value = "575757"
 
-[node name="White" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+[node name="ffffff" parent="TabContainer/color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 500.0
@@ -199,7 +201,7 @@ price = 50
 property = "color"
 value = "ffffff"
 
-[node name="Pink" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+[node name="cf1dc6" parent="TabContainer/color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 750.0
@@ -210,7 +212,7 @@ price = 100
 property = "color"
 value = "cf1dc6"
 
-[node name="Face" type="Tabs" parent="TabContainer"]
+[node name="face" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -219,7 +221,7 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Face"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/face"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 25
@@ -228,12 +230,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Face/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/face/VBoxContainer"]
 margin_right = 230.0
 margin_bottom = 250.0
 custom_constants/separation = 20
 
-[node name="NeutralFace" parent="TabContainer/Face/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="NeutralFace" parent="TabContainer/face/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 230.0
@@ -242,13 +244,13 @@ unlocked = true
 property = "face"
 value = "NeutralFace"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Face/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/face/VBoxContainer"]
 margin_top = 275.0
 margin_right = 230.0
 margin_bottom = 275.0
 custom_constants/separation = 20
 
-[node name="Hats" type="Tabs" parent="TabContainer"]
+[node name="hat" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -257,25 +259,25 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Hats"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/hat"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 25
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Hats/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/hat/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 20
 
-[node name="None" parent="TabContainer/Hats/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="none" parent="TabContainer/hat/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_right = 190.0
 margin_bottom = 210.0
 unlocked = true
 property = "hat"
 value = "none"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Hats/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/hat/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 20

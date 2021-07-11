@@ -4,10 +4,12 @@ var leftHanded:bool = false #very important
 
 
 var currencies := {
-	"coins":0,
+	"coins":10000,
 	}
 
 var curLvl := "Beginner"
+
+#stats
 
 var fruits = {
 	"waterMelon": {
@@ -24,13 +26,31 @@ var fruits = {
 	},
 }
 
-#cosmetics
-var cosmetics = {
+#inventory
+
+var cosmetics = { #equiped rn
 	"hat":"none",
 	"body":"LizardBody",
 	"color": "387f2e",
 	"face": "NeutralFace"
 }
+
+var ownedCosmetics = {
+	"hat":{
+		"none":true,
+	},
+	"body":{
+		"LizardBody":true,
+	},
+	"color": {
+		"387f2e":true,
+	},
+	"face": {
+		"NeutralFace":true
+	}
+}
+
+#save data
 
 var levelMapData = {
 

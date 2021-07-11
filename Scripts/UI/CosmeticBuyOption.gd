@@ -48,6 +48,7 @@ func _on_BuyOption_pressed():
 	if !unlocked and price <= Global.currencies[currency]:
 		Global.currencies[currency] -= price
 		unlocked = true
+		Global.ownedCosmetics[property][value] = true
 	if unlocked:
 		Global.cosmetics[property] = value
 	updateText()

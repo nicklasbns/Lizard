@@ -10,15 +10,21 @@
 
 <br>
 
-## Minor improvements
-- Coin indicator is now visible while playing a level
-- Fruits are no longer visible over the death menu
-
-<br>
-
 ## Changes
 - **[Advanced]** level price change **(100 → 20)**
 - **[Fruit Salad]** level price change **(2000 → 100)**
+
+<br>
+
+## Minor improvements
+- Coin indicator is now visible while playing a level
+
+
+<br>
+
+## Bug Fixes
+- Fruits are no longer visible over the death menu
+- You will no longer have to buy items again after revisiting 
 
 # v 0.4
 ## New Content
