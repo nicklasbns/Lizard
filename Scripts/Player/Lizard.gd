@@ -43,6 +43,7 @@ func _on_Timer_timeout():
 		elif area.get_collision_layer_bit(2):
 			infants += area.nutrition
 			fruitsEaten += area.value
+			Global.currencies["coins"] += area.value
 			area.queue_free()
 			
 	#Tilemaps are bodies and not areas
@@ -86,7 +87,6 @@ func death(): #if we die, then we load the death menu, gain coins equal to fruit
 	dead = true
 	var deathMenu:Control = self.get_parent().get_node("deathMenu")#kills player
 	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] You died\n\n But you earned " + str(fruitsEaten) + " coins")
-	Global.currencies["coins"] += fruitsEaten
 	deathMenu.visible = true
 	$Timer.stop()
 	
