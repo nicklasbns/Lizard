@@ -8,6 +8,7 @@ export var fruitAmount:int = 1
 
 export var fruitTypes = {
 	"waterMelon":true,
+	"carrot":false,
 }
 
 export var unlocked:bool = true
@@ -51,9 +52,7 @@ func _ready():
 	player = load("res://Scripts/Player/Lizard.tscn").instance()
 	player.position = $Spawnpoint.position
 	self.add_child(player)
-	var fruit = Node2D.new()
-	fruit.set_name("Fruits")
-	self.add_child(fruit)
+
 	
 	
 	self.visible = true
@@ -74,6 +73,7 @@ func _process(_delta):
 			var food:Area2D = load("res://Scripts/Fruit.tscn").instance() #add more
 			food.get_node("Sprite").texture = load(Global.fruits[selectedFruit].image)
 			food.nutrition = Global.fruits[selectedFruit].nutrition
+			food.value = Global.fruits[selectedFruit].value
 			var pos:Vector2 = randPos()
 			
 			var playerBodyPos := []

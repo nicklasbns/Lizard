@@ -46,6 +46,7 @@ previousScenePath = "res://Scripts/Menues/mainMenu.tscn"
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 64.0
+margin_bottom = -4.0
 custom_styles/tab_fg = SubResource( 1 )
 custom_styles/tab_disabled = SubResource( 1 )
 custom_styles/tab_bg = SubResource( 2 )
@@ -90,6 +91,12 @@ margin_bottom = 210.0
 unlocked = true
 value = "LizardBody"
 
+[node name="Arrows" parent="TabContainer/Body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 190.0
+margin_bottom = 210.0
+price = 50
+value = "Arrows"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Body/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -111,42 +118,97 @@ custom_constants/separation = 25
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Color/VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 980.0
+margin_bottom = 250.0
 custom_constants/separation = 20
 
 [node name="Green" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 190.0
-margin_bottom = 210.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 230.0
+margin_bottom = 250.0
 unlocked = true
 property = "color"
 value = "387f2e"
 
 [node name="Red" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 190.0
-margin_bottom = 210.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 250.0
+margin_right = 480.0
+margin_bottom = 250.0
 price = 20
 property = "color"
 value = "b81706"
 
-[node name="Cyan" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 190.0
-margin_bottom = 210.0
+[node name="Yellow" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 275.0
+margin_right = 230.0
+margin_bottom = 525.0
 price = 20
+property = "color"
+value = "fcd71e"
+
+[node name="Brown" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 750.0
+margin_top = 275.0
+margin_right = 980.0
+margin_bottom = 525.0
+price = 20
+property = "color"
+value = "783e00"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Color/VBoxContainer"]
+margin_top = 275.0
+margin_right = 980.0
+margin_bottom = 525.0
+custom_constants/separation = 20
+
+[node name="Cyan" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 500.0
+margin_top = -275.0
+margin_right = 730.0
+margin_bottom = -25.0
+price = 50
 property = "color"
 value = "06a0b8"
 
-[node name="Pink" parent="TabContainer/Color/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 190.0
-margin_bottom = 210.0
+[node name="Gray" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 250.0
+margin_right = 480.0
+margin_bottom = 250.0
+price = 50
+property = "color"
+value = "575757"
+
+[node name="White" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 500.0
+margin_right = 730.0
+margin_bottom = 250.0
+price = 50
+property = "color"
+value = "ffffff"
+
+[node name="Pink" parent="TabContainer/Color/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 750.0
+margin_top = -275.0
+margin_right = 980.0
+margin_bottom = -25.0
 price = 100
 property = "color"
 value = "cf1dc6"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Color/VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
-custom_constants/separation = 20
 
 [node name="Face" type="Tabs" parent="TabContainer"]
 visible = false

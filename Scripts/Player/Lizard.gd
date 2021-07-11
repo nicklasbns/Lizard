@@ -42,7 +42,7 @@ func _on_Timer_timeout():
 			death()
 		elif area.get_collision_layer_bit(2):
 			infants += area.nutrition
-			fruitsEaten += 1
+			fruitsEaten += area.value
 			area.queue_free()
 			
 	#Tilemaps are bodies and not areas

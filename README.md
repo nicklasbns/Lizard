@@ -1,5 +1,25 @@
 > # Patch Notes
 
+# v 0.5
+## New Content
+- Added new level **[Snake]**
+- Added new level **[Maze]**
+- Added new fruit type **[Carrot]**
+- Added new body type **[Arrows]**
+- Added 4 new colours
+
+<br>
+
+## Minor improvements
+- Coin indicator is now visible while playing a level
+- Fruits are no longer visible over the death menu
+
+<br>
+
+## Changes
+- **[Advanced]** level price change **(100 → 20)**
+- **[Fruit Salad]** level price change **(2000 → 100)**
+
 # v 0.4
 ## New Content
 - Added Android version and control
