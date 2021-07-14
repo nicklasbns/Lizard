@@ -13,7 +13,8 @@ func _ready():
 			$VBoxContainer.add_child(hBox)
 		
 		var hBox:HBoxContainer = $VBoxContainer.get_child($VBoxContainer.get_child_count()-1) #current hBox
-		
+		if level.get_name() in Global.ownedLevels:
+			level.unlocked = true
 		#design
 		$VBoxContainer.margin_left = $VBoxContainer.rect_size.x/25
 		$VBoxContainer.margin_top = $VBoxContainer.rect_size.y/9 + 80 #80 is to make space for back button
@@ -57,6 +58,8 @@ func _button_pressed(level):
 	if Global.currencies[level.currency] >= level.price and !level.unlocked: #if we don't own, but can buy it,
 		level.unlocked = true #then we buy it, and pay for it ourself
 		Global.currencies[level.currency] -= level.price
+		Global.ownedLevels[level.get_name()] = true
+		Global._saveGame()
 		
 	if level.unlocked: #if we do own it, then we play it
 		Global.curLvl = level.get_name()

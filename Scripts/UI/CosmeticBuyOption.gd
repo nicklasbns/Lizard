@@ -52,6 +52,7 @@ func _on_BuyOption_pressed():
 	if unlocked:
 		Global.cosmetics[property] = value
 	updateText()
+	Global._saveGame()
 
 
 func updateText():

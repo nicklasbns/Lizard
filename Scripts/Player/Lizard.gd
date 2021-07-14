@@ -89,6 +89,7 @@ func death(): #if we die, then we load the death menu, gain coins equal to fruit
 	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] You died\n\n But you earned " + str(fruitsEaten) + " coins")
 	deathMenu.visible = true
 	$Timer.stop()
+	Global._saveGame()
 	
 func respawn():
 	dead = false

@@ -15,3 +15,6 @@ func _on_Shop_pressed():
 func _on_Settings_pressed():
 	var _change = get_tree().change_scene("res://Scripts/Menues/Settings.tscn")
 	queue_free()
+
+func _ready():
+	Global._loadGame()

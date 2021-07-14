@@ -50,8 +50,33 @@ var ownedCosmetics = {
 	}
 }
 
-#save data
+var ownedLevels = {}
 
-var levelMapData = {
 
-}
+var levelMapData = {}
+
+var saveFile = "user://Lizzard.save"
+
+func _saveGame():
+	var saveData = {
+		"currencies": currencies,
+		"cosmetics": cosmetics,
+		"ownedCosmetics": ownedCosmetics,
+		"levelMapData": levelMapData,
+	}
+	var file = File.new()
+	file.open(saveFile, File.WRITE)
+	file.store_var(saveData)
+	file.close()
+
+func _loadGame():
+	var saveData
+	var file = File.new()
+	if file.file_exists(saveFile):
+		file.open(saveFile, File.READ)
+		saveData = file.get_var()
+		file.close()
+		
+		for key in saveData.keys():
+			self[key] = saveData[key]
+			print(key)
