@@ -23,6 +23,7 @@ position = Vector2( -32, -96 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 2 )
 shape = SubResource( 1 )
+passby_press = true
 
 [node name="Down" type="TouchScreenButton" parent="."]
 position = Vector2( 32, 96 )
@@ -30,6 +31,7 @@ rotation = 3.14159
 normal = ExtResource( 1 )
 pressed = ExtResource( 2 )
 shape = SubResource( 1 )
+passby_press = true
 
 [node name="Left" type="TouchScreenButton" parent="."]
 position = Vector2( -96, 32 )
@@ -37,6 +39,7 @@ rotation = -1.5708
 normal = ExtResource( 1 )
 pressed = ExtResource( 2 )
 shape = SubResource( 1 )
+passby_press = true
 
 [node name="Right" type="TouchScreenButton" parent="."]
 position = Vector2( 96, -32 )
@@ -44,6 +47,7 @@ rotation = 1.5708
 normal = ExtResource( 1 )
 pressed = ExtResource( 2 )
 shape = SubResource( 1 )
+passby_press = true
 [connection signal="pressed" from="Up" to="." method="_on_Up_pressed"]
 [connection signal="released" from="Up" to="." method="_on_Up_released"]
 [connection signal="pressed" from="Down" to="." method="_on_Down_pressed"]

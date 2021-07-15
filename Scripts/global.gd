@@ -1,7 +1,9 @@
 extends Node
 
-var leftHanded:bool = false #very important
 
+var settings= {
+	"leftHanded":false
+}
 
 var currencies := {
 	"coins":0,
@@ -62,7 +64,9 @@ func _saveGame():
 		"currencies": currencies,
 		"cosmetics": cosmetics,
 		"ownedCosmetics": ownedCosmetics,
+		"ownedLevels": ownedLevels,
 		"levelMapData": levelMapData,
+		"settings": settings,
 	}
 	var file = File.new()
 	file.open(saveFile, File.WRITE)
@@ -79,4 +83,3 @@ func _loadGame():
 		
 		for key in saveData.keys():
 			self[key] = saveData[key]
-			print(key)
