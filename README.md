@@ -1,5 +1,26 @@
 > # Patch Notes
 
+# v 0.6
+
+## New Content
+- Game now saves when you go offline
+
+
+<br>
+
+## Minor improvements
+- body now rotates with you
+
+<br>
+
+
+## Bugfixes
+- [Mobile] fixed bug where you coudn't change side of controls
+
+
+<br>
+
+
 # v 0.5
 ## New Content
 - Added new level **[Snake]**
@@ -22,9 +43,14 @@
 
 <br>
 
+
 ## Bug Fixes
 - Fruits are no longer visible over the death menu
 - You will no longer have to buy items again after revisiting 
+
+
+<br>
+
 
 # v 0.4
 ## New Content
