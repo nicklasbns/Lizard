@@ -2,7 +2,7 @@ extends Node
 
 
 var settings= {
-	"leftHanded":false
+	"leftHanded":true
 }
 
 var currencies := {
