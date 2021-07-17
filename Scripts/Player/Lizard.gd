@@ -24,12 +24,14 @@ func _on_Timer_timeout():
 	for i in bodyCount:
 		if i == bodyCount: pass #except the first
 		if i == 0: ButPos = $Body/Color.get_child(bodyCount-i).get_position() #logging but position in case of death
+		$Body/Color.get_child(bodyCount-i).set_rotation(($Body/Color.get_child(bodyCount-i).get_position() - $Body/Color.get_child(bodyCount-i-1).get_position()).angle()+PI/2)
 		$Body/Color.get_child(bodyCount-i).set_position($Body/Color.get_child(bodyCount-i-1).get_position())
 	head.set_position(head.get_position() + direction) #the first one shall guide to the new way
+	head.set_rotation(direction.angle()-PI/2)
 	$Body/Face.set_position($Body/Face.get_position() + direction) #and we want the face with us
 	$Body/Face.set_rotation(direction.angle()-PI/2) #and turn that frown the right way up
 	$Body/Hat.set_position($Body/Hat.get_position() + direction) #and  the hat
-	$Body/Hat.set_rotation(direction.angle()-PI/2) 
+	$Body/Hat.set_rotation(direction.angle()-PI/2)
 	lastMove = direction
 	
 	#Just waiting two frames before checking stuff
@@ -54,6 +56,7 @@ func _on_Timer_timeout():
 	if infants > 0: #if we're expecting, then a kid is born once every move
 		var kid = load("res://Scripts/Player/BodyPart.tscn").instance()
 		kid.set_position($Body/Color.get_child(bodyCount-1).get_position())
+		kid.set_rotation($Body/Color.get_child(bodyCount-2).get_rotation())
 		$Body/Color.add_child(kid)
 		infants -= 1
 		
