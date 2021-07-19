@@ -46,6 +46,7 @@ func _on_Timer_timeout():
 			infants += area.nutrition
 			fruitsEaten += area.value
 			Global.currencies["coins"] += area.value
+			self.get_parent().fruitPos.erase(area.get_position())
 			area.queue_free()
 			
 	#Tilemaps are bodies and not areas

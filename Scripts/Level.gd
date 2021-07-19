@@ -21,6 +21,8 @@ var alreadyContinued:bool = false
 
 var mapPos := []
 
+var fruitPos := []
+
 var progress := [0,0]
 
 var loaded:bool
@@ -81,9 +83,10 @@ func _process(_delta):
 				playerBodyPos.push_back(body.position) #logging all body positions
 				
 				
-			while playerBodyPos.has(pos) or !mapPos.has(pos): #if the friut is in player
+			while playerBodyPos.has(pos) or fruitPos.has(pos) or !mapPos.has(pos): #if the friut is in player
 				pos = randPos() #or not in map, then we get new position for fruit
 			food.set_position(pos)
+			fruitPos.push_back(food.get_position())
 			$Fruits.add_child(food)   
 			
 		

@@ -13,12 +13,13 @@
 <br>
 
 ## Minor improvements
-- body now rotates with you
+- body now rotates with you when you move around
 
 <br>
 
 
 ## Bugfixes
+- fixed bug where fruits could stack
 - [Mobile] fixed bug where you coudn't change side of controls
 
 
