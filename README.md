@@ -5,6 +5,9 @@
 ## New Content
 - Game now saves when you go offline
 - Added accessory **[Clown nose]**
+- Added accessory **[Disguise goggles]**
+- Added accessory **[Halloween mask]**
+- Added face **[Cyclops]**
 
 
 <br>

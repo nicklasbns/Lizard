@@ -274,7 +274,7 @@ custom_constants/separation = 25
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/accessory/VBoxContainer"]
-margin_right = 730.0
+margin_right = 980.0
 margin_bottom = 220.0
 custom_constants/separation = 20
 
@@ -307,9 +307,19 @@ price = 50
 property = "accessory"
 value = "disguiseGoggles"
 
+[node name="halloweenMask" parent="TabContainer/accessory/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 750.0
+margin_right = 980.0
+margin_bottom = 220.0
+price = 200
+property = "accessory"
+value = "halloweenMask"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/accessory/VBoxContainer"]
 margin_top = 245.0
-margin_right = 730.0
+margin_right = 980.0
 margin_bottom = 245.0
 custom_constants/separation = 20
 
