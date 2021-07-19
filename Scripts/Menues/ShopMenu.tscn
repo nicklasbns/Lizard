@@ -250,7 +250,7 @@ margin_right = 230.0
 margin_bottom = 275.0
 custom_constants/separation = 20
 
-[node name="hat" type="Tabs" parent="TabContainer"]
+[node name="accessory" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -259,25 +259,25 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/hat"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/accessory"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 25
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/hat/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/accessory/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 20
 
-[node name="none" parent="TabContainer/hat/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="none" parent="TabContainer/accessory/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_right = 190.0
 margin_bottom = 210.0
 unlocked = true
-property = "hat"
+property = "accessory"
 value = "none"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/hat/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/accessory/VBoxContainer"]
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 20

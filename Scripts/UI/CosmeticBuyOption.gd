@@ -6,7 +6,7 @@ export(String, "coins") var currency = "coins"
 
 export var unlocked:bool
 
-export(String, "body", "color", "face", "hat") var property = "body"
+export(String, "body", "color", "face", "accessory") var property = "body"
 
 export var value:String
 
@@ -25,7 +25,7 @@ func _ready():
 		textRect.rect_position = Vector2(0,0)
 		textureNode.add_child(textRect)
 		$VBoxContainer/CenterContainer.add_child(textureNode)
-	if property == "hat":
+	if property == "accessory":
 		var textureNodeFace := TextureRect.new()
 		textureNodeFace.texture = load("res://Assets/Faces/" + Global.cosmetics["face"] + ".png")
 		textureNodeFace.rect_min_size = Vector2(128, 128)
@@ -34,11 +34,11 @@ func _ready():
 		textRect.rect_position = Vector2(0,0)
 		textureNodeFace.add_child(textRect)
 		$VBoxContainer/CenterContainer.add_child(textureNodeFace)
-		var textureNodeHat := TextureRect.new()
-		textureNodeHat.texture = load("res://Assets/Hats/" + value + ".png")
-		textureNodeHat.rect_min_size = Vector2(128, 128)
-		textureNodeHat.expand = true
-		textureNodeFace.add_child(textureNodeHat)
+		var textureNodeAccessory := TextureRect.new()
+		textureNodeAccessory.texture = load("res://Assets/Accessories/" + value + ".png")
+		textureNodeAccessory.rect_min_size = Vector2(128, 128)
+		textureNodeAccessory.expand = true
+		textureNodeFace.add_child(textureNodeAccessory)
 	
 	
 func _draw():

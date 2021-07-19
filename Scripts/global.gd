@@ -31,14 +31,14 @@ var fruits = {
 #inventory
 
 var cosmetics = { #equiped rn
-	"hat":"none",
+	"accessory":"none",
 	"body":"LizardBody",
 	"color": "387f2e",
 	"face": "NeutralFace"
 }
 
 var ownedCosmetics = {
-	"hat":{
+	"accessory":{
 		"none":true,
 	},
 	"body":{

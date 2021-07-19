@@ -8,7 +8,7 @@ var dead:bool = false
 var justDied:bool = false
 var ButPos:Vector2
 func _ready():
-	$Body/Hat.texture = load("res://Assets/Hats/" + Global.cosmetics["hat"] + ".png")
+	$Body/Accessory.texture = load("res://Assets/Accessories/" + Global.cosmetics["accessory"] + ".png")
 	$Body/Color.set_modulate(Global.cosmetics["color"])
 	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance()
 	deathMenu.visible = false
@@ -30,8 +30,8 @@ func _on_Timer_timeout():
 	head.set_rotation(direction.angle()-PI/2)
 	$Body/Face.set_position($Body/Face.get_position() + direction) #and we want the face with us
 	$Body/Face.set_rotation(direction.angle()-PI/2) #and turn that frown the right way up
-	$Body/Hat.set_position($Body/Hat.get_position() + direction) #and  the hat
-	$Body/Hat.set_rotation(direction.angle()-PI/2)
+	$Body/Accessory.set_position($Body/Accessory.get_position() + direction) #and  the hat
+	$Body/Accessory.set_rotation(direction.angle()-PI/2)
 	lastMove = direction
 	
 	#Just waiting two frames before checking stuff
@@ -103,4 +103,4 @@ func respawn():
 		else: $Body/Color.get_child(i).set_position($Body/Color.get_child(i+1).get_position())
 		print($Body/Color.get_child(i).get_position())
 	$Body/Face.set_position($Body/Color.get_child(0).get_position())
-	$Body/Hat.set_position($Body/Color.get_child(0).get_position())
+	$Body/Accessory.set_position($Body/Color.get_child(0).get_position())
