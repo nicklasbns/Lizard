@@ -4,6 +4,7 @@
 
 ## New Content
 - Game now saves when you go offline
+- Added accessory **[Clown nose]**
 
 
 <br>
