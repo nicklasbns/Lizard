@@ -60,14 +60,15 @@ custom_constants/separation = 128
 alignment = 1
 
 [node name="Quit" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer2"]
-margin_left = 198.0
-margin_right = 448.0
+margin_left = 387.0
+margin_right = 637.0
 margin_bottom = 51.0
 rect_min_size = Vector2( 250, 50 )
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
 
 [node name="adButton" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer2"]
+visible = false
 margin_left = 576.0
 margin_right = 826.0
 margin_bottom = 51.0

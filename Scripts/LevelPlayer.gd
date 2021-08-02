@@ -14,21 +14,23 @@ func _ready(): #we load the level that we want to play, and transfers parrents
 		$dPad.visible = true
 		if Global.settings.leftHanded: $dPad.rect_position = Vector2(-800,352)
 		else: $dPad.rect_position = Vector2(800,352)
-	$AdMob.load_rewarded_video()
 	$CenterContainer/VBoxContainer/ProgressBar.max_value = level.progress[1]
+	$AdMob.load_rewarded_video()
+	$Banner.load_banner()
 
 func _process(_delta):
 	if !level.loaded:
 		$CenterContainer/VBoxContainer/ProgressBar.value = level.progress[0]
 
-func test():
-	self.get_node(level.get_name()).get_node("Lizard").coinAgain()
-	var _change = get_tree().change_scene("res://Scripts/Menues/mainMenu.tscn")
 func _on_AdMob_rewarded(_currency, _ammount):
 	self.get_node(level.get_name()).get_node("Lizard").coinAgain()
-	self.get_node(level.get_name()).get_node("DeathMenu").visible = false
-
+	$Banner.hide_banner()
+	var _change = get_tree().change_scene("res://Scripts/Menues/mainMenu.tscn")
 
 func _on_AdMob_rewarded_video_loaded():
-	self.get_node(level.get_name()).get_node("DeathMenu").get_node("ColorRect/VBoxContainer/HBoxContainer2/adButton").visible = true
+	self.get_node(level.get_name()).get_node("deathMenu").get_node("ColorRect/VBoxContainer/HBoxContainer2/adButton").visible = true
 
+
+
+func _on_Banner_banner_loaded():
+	$Banner.show_banner()

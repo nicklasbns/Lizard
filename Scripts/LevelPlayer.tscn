@@ -24,6 +24,8 @@ rect_scale = Vector2( 2, 2 )
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource( 3 )
 is_real = true
+banner_on_top = false
+banner_size = "BANNER"
 rewarded_id = "ca-app-pub-1885419653497441/2655259672"
 is_personalized = false
 
@@ -61,5 +63,14 @@ custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Banner" type="Node" parent="."]
+script = ExtResource( 3 )
+is_real = true
+banner_on_top = false
+banner_size = "BANNER"
+banner_id = "ca-app-pub-1885419653497441/5174712851"
+is_personalized = false
 [connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
 [connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
+[connection signal="banner_loaded" from="Banner" to="." method="_on_Banner_banner_loaded"]
