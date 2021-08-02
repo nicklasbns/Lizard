@@ -4,6 +4,7 @@
 
 ## Bugfixes
 - Fixed bug where **[clown nose]** wouldn't be bought
+- Fixed bug where coin indicator would move out of the side
 
 # v 0.6
 
