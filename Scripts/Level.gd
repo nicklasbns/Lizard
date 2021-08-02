@@ -53,8 +53,9 @@ func _ready():
 	
 	player = load("res://Scripts/Player/Lizard.tscn").instance()
 	player.position = $Spawnpoint.position
+	player.set_name("Lizard")
 	self.add_child(player)
-
+	self.move_child(player,4) #sets player in front of fruit, but behind deathMenu 
 	
 	
 	self.visible = true

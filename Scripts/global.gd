@@ -6,7 +6,7 @@ var settings= {
 }
 
 var currencies := {
-	"coins":1000,
+	"coins":0,
 	}
 
 var curLvl := "Beginner"
@@ -82,4 +82,4 @@ func _loadGame():
 		file.close()
 		
 		for key in saveData.keys():
-			pass#self[key] = saveData[key]
+			self[key] = saveData[key]

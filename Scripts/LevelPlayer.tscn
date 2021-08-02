@@ -25,6 +25,7 @@ rect_scale = Vector2( 2, 2 )
 script = ExtResource( 3 )
 is_real = true
 rewarded_id = "ca-app-pub-1885419653497441/2655259672"
+is_personalized = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -61,5 +62,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
-[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]
 [connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]

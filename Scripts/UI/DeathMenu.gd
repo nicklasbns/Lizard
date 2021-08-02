@@ -7,5 +7,5 @@ func _on_Quit_pressed(): #if you quit, then we go to the main menu
 	queue_free()
 
 
-func _on_Continue_pressed():
-	self.get_parent().get_parent().get_node("AdMob").show_rewarded_video()
+func _on_adButton_pressed():
+	self.get_parent().get_parent().test()#.get_node("AdMob").show_rewarded_video()

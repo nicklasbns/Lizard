@@ -2,6 +2,12 @@
 
 # v 1.0
 
+## New Content
+- Added ads to mobile, to double coin gain in level
+
+<br>
+
+
 ## Bugfixes
 - Fixed bug where **[clown nose]** wouldn't be bought
 - Fixed bug where coin indicator would move out of the side
@@ -18,8 +24,10 @@
 
 <br>
 
+
 ## Minor improvements
 - body now rotates with you when you move around
+
 
 <br>
 

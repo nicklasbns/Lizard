@@ -1,9 +1,10 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Wall.png" type="Texture" id=2]
 [ext_resource path="res://Assets/BackgroundTile.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/UI/ResourceIndicator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/UI/DeathMenu.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -509,6 +510,9 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beginner/Map"]
 polygon = PoolVector2Array( -32, -32, -32, 672, 672, 672, 672, -32 )
 
+[node name="deathMenu" parent="Beginner" instance=ExtResource( 5 )]
+visible = false
+
 [node name="Advanced" type="Node2D" parent="."]
 position = Vector2( 2064, 0 )
 script = ExtResource( 1 )
@@ -558,6 +562,9 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Advanced/Map"]
 polygon = PoolVector2Array( -32, -32, -32, 928, 928, 928, 928, -32 )
+
+[node name="deathMenu" parent="Advanced" instance=ExtResource( 5 )]
+visible = false
 
 [node name="Fruit Salad" type="Node2D" parent="."]
 position = Vector2( 4160, 0 )
@@ -610,6 +617,9 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fruit Salad/Map"]
 polygon = PoolVector2Array( -32, -32, -32, 544, 544, 544, 544, -32 )
+
+[node name="deathMenu" parent="Fruit Salad" instance=ExtResource( 5 )]
+visible = false
 
 [node name="Snake" type="Node2D" parent="."]
 position = Vector2( 0, 1272 )
@@ -670,6 +680,9 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Snake/Map"]
 polygon = PoolVector2Array( -32, -32, 1056, -32, 1056, 224, 224, 224, 224, 352, 1056, 352, 1056, 992, -32, 992, -32, 736, 800, 736, 800, 608, -32, 608 )
 
+[node name="deathMenu" parent="Snake" instance=ExtResource( 5 )]
+visible = false
+
 [node name="Maze" type="Node2D" parent="."]
 position = Vector2( 2368, 1608 )
 script = ExtResource( 1 )
@@ -729,3 +742,6 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze/Map"]
 position = Vector2( 192, 256 )
 polygon = PoolVector2Array( -224, -288, -224, 928, 480, 928, 480, 736, 224, 736, 224, 672, 32, 672, 32, 736, -32, 736, -32, 416, 288, 416, 288, 480, 32, 480, 32, 664, 232, 672, 480, 672, 480, 416, 736, 416, 736, 160, 800, 160, 800, 216, 992, 216, 992, -32, 736, -32, 736, -96, 1056, -96, 1056, 224, 992, 224, 800, 224, 800, 480, 544, 480, 544, 928, 736, 928, 736, 672, 1056, 672, 1056, 736, 800, 736, 800, 928, 1248, 928, 1248, 480, 992, 480, 992, 416, 1248, 416, 1248, -288, 544, -288, 544, -32, 480, -32, 480, -288, 32, -288, 32, -32, -32, -32, -32, 160, 224, 160, 224, -96, 288, -96, 288, 160, 544, 160, 544, 224, -32, 224, -32, -288 )
+
+[node name="deathMenu" parent="Maze" instance=ExtResource( 5 )]
+visible = false

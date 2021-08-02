@@ -6,14 +6,9 @@ var infants:int = 0
 var fruitsEaten:int = 0
 var dead:bool = false
 var justDied:bool = false
-var ButPos:Vector2
 func _ready():
 	$Body/Accessory.texture = load("res://Assets/Accessories/" + Global.cosmetics["accessory"] + ".png")
 	$Body/Color.set_modulate(Global.cosmetics["color"])
-	var deathMenu:Control = load("res://Scripts/UI/DeathMenu.tscn").instance()
-	deathMenu.visible = false
-	deathMenu.set_name("deathMenu")
-	self.get_parent().add_child(deathMenu)
 	$Timer.start()
 
 func _on_Timer_timeout():
@@ -23,7 +18,6 @@ func _on_Timer_timeout():
 	#All bodyparts have to move one forward in the chain, and take the leading parts place
 	for i in bodyCount:
 		if i == bodyCount: pass #except the first
-		if i == 0: ButPos = $Body/Color.get_child(bodyCount-i).get_position() #logging but position in case of death
 		$Body/Color.get_child(bodyCount-i).set_rotation(($Body/Color.get_child(bodyCount-i).get_position() - $Body/Color.get_child(bodyCount-i-1).get_position()).angle()+PI/2)
 		$Body/Color.get_child(bodyCount-i).set_position($Body/Color.get_child(bodyCount-i-1).get_position())
 	head.set_position(head.get_position() + direction) #the first one shall guide to the new way
@@ -87,21 +81,14 @@ func _process(_delta): #input for movement
 	
 	
 	
-func death(): #if we die, then we load the death menu, gain coins equal to fruits gained and
-	dead = true
-	var deathMenu:Control = self.get_parent().get_node("deathMenu")#kills player
+func death(): #if we die, then we load the death menu, 
+	dead = true#gain coins equal to fruits gained and kill player
+	var deathMenu:Control = self.get_parent().get_node("deathMenu")
 	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] You died\n\n But you earned " + str(fruitsEaten) + " coins")
 	deathMenu.visible = true
 	$Timer.stop()
 	Global._saveGame()
-	
-func respawn():
-	dead = false
-	justDied = true
-	var bodyCount:int = $Body/Color.get_child_count()-1
-	for i in bodyCount+1:
-		if i == bodyCount: $Body/Color.get_child(i).set_position(ButPos) #except the last, that one is logged
-		else: $Body/Color.get_child(i).set_position($Body/Color.get_child(i+1).get_position())
-		print($Body/Color.get_child(i).get_position())
-	$Body/Face.set_position($Body/Color.get_child(0).get_position())
-	$Body/Accessory.set_position($Body/Color.get_child(0).get_position())
+
+func coinAgain():
+	Global.currencies["coins"] += fruitsEaten
+	Global._saveGame()

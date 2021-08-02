@@ -7,6 +7,7 @@ func _ready(): #we load the level that we want to play, and transfers parrents
 	for kid in levels.get_children(): kid.visible = false #Hiding all the kids away
 	level = levels.get_node(Global.curLvl)
 	levels.remove_child(level)
+	level.set_name(Global.curLvl)
 	add_child(level)
 	level.set_position(self.get_position())
 	if OS.get_name() == "Android":
@@ -20,12 +21,14 @@ func _process(_delta):
 	if !level.loaded:
 		$CenterContainer/VBoxContainer/ProgressBar.value = level.progress[0]
 
-
+func test():
+	self.get_node(level.get_name()).get_node("Lizard").coinAgain()
+	var _change = get_tree().change_scene("res://Scripts/Menues/mainMenu.tscn")
 func _on_AdMob_rewarded(_currency, _ammount):
-	self.get_node(level.get_name()).get_node("Lizard").respawn()
+	self.get_node(level.get_name()).get_node("Lizard").coinAgain()
 	self.get_node(level.get_name()).get_node("DeathMenu").visible = false
 
 
 func _on_AdMob_rewarded_video_loaded():
-	self.get_node(level.get_name()).get_node("DeathMenu").get_node("ColorRect/VBoxContainer/HBoxContainer2/Continue").visible = true
+	self.get_node(level.get_name()).get_node("DeathMenu").get_node("ColorRect/VBoxContainer/HBoxContainer2/adButton").visible = true
 
