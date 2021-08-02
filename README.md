@@ -1,5 +1,10 @@
 > # Patch Notes
 
+# v 1.0
+
+## Bugfixes
+- Fixed bug where **[clown nose]** wouldn't be bought
+
 # v 0.6
 
 ## New Content

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ClownNose.png-bc005bb5cfdea912251c35d7cc01d12f.stex"
+path="res://.import/clownNose.png-6a287bc5f953e3559bdecda93e82cb2b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Accessories/ClownNose.png"
-dest_files=[ "res://.import/ClownNose.png-bc005bb5cfdea912251c35d7cc01d12f.stex" ]
+source_file="res://Assets/Accessories/clownNose.png"
+dest_files=[ "res://.import/clownNose.png-6a287bc5f953e3559bdecda93e82cb2b.stex" ]
 
 [params]
 
