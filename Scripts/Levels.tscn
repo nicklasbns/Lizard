@@ -463,10 +463,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 size = [ 11, 11 ]
-fruitTypes = {
-"carrot": false,
-"waterMelon": true
-}
 
 [node name="TextureRect" type="TextureRect" parent="Beginner"]
 show_behind_parent = true
@@ -519,6 +515,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
+fruitTypes = {
+"carrot": 20,
+"waterMelon": 80
+}
 unlocked = false
 price = 20
 
@@ -567,7 +567,7 @@ polygon = PoolVector2Array( -32, -32, -32, 928, 928, 928, 928, -32 )
 [node name="deathMenu" parent="Advanced" instance=ExtResource( 5 )]
 visible = false
 
-[node name="Fruit Salad" type="Node2D" parent="."]
+[node name="Melon madness" type="Node2D" parent="."]
 position = Vector2( 4160, 0 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -578,7 +578,7 @@ fruitAmount = 4
 unlocked = false
 price = 100
 
-[node name="TextureRect" type="TextureRect" parent="Fruit Salad"]
+[node name="TextureRect" type="TextureRect" parent="Melon madness"]
 show_behind_parent = true
 margin_left = -352.0
 margin_top = -352.0
@@ -591,9 +591,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Spawnpoint" type="Position2D" parent="Fruit Salad"]
+[node name="Spawnpoint" type="Position2D" parent="Melon madness"]
 
-[node name="TileMap" type="TileMap" parent="Fruit Salad"]
+[node name="TileMap" type="TileMap" parent="Melon madness"]
 position = Vector2( -32, -32 )
 tile_set = SubResource( 48 )
 cell_tile_origin = 1
@@ -601,25 +601,25 @@ collision_layer = 2
 format = 1
 tile_data = PoolIntArray( -262149, 0, 4, -262148, 0, 196609, -262147, 0, 196609, -262146, 0, 196609, -262145, 0, 196609, -327680, 0, 196609, -327679, 0, 196609, -327678, 0, 196609, -327677, 0, 196609, -327676, 0, 196609, -327675, 0, 7, -196613, 0, 65539, -262139, 0, 65539, -131077, 0, 65539, -196603, 0, 65539, -65541, 0, 65539, -131067, 0, 65539, -5, 0, 65539, -65531, 0, 65539, 65531, 0, 65539, 5, 0, 65539, 131067, 0, 65539, 65541, 0, 65539, 196603, 0, 65539, 131077, 0, 65539, 262139, 0, 65539, 196613, 0, 65539, 327675, 0, 65539, 262149, 0, 65539, 393211, 0, 196612, 393212, 0, 196609, 393213, 0, 196609, 393214, 0, 196609, 393215, 0, 196609, 327680, 0, 196609, 327681, 0, 196609, 327682, 0, 196609, 327683, 0, 196609, 327684, 0, 196609, 327685, 0, 196615 )
 
-[node name="Fruits" type="Node2D" parent="Fruit Salad"]
+[node name="Fruits" type="Node2D" parent="Melon madness"]
 
-[node name="Camera2D" type="Camera2D" parent="Fruit Salad"]
+[node name="Camera2D" type="Camera2D" parent="Melon madness"]
 current = true
 zoom = Vector2( 2, 2 )
 
-[node name="Control" parent="Fruit Salad/Camera2D" instance=ExtResource( 4 )]
+[node name="Control" parent="Melon madness/Camera2D" instance=ExtResource( 4 )]
 margin_right = 0.0
 margin_bottom = 0.0
 
-[node name="Map" type="Area2D" parent="Fruit Salad"]
+[node name="Map" type="Area2D" parent="Melon madness"]
 position = Vector2( -256, -256 )
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fruit Salad/Map"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Melon madness/Map"]
 polygon = PoolVector2Array( -32, -32, -32, 544, 544, 544, 544, -32 )
 
-[node name="deathMenu" parent="Fruit Salad" instance=ExtResource( 5 )]
+[node name="deathMenu" parent="Melon madness" instance=ExtResource( 5 )]
 visible = false
 
 [node name="Snake" type="Node2D" parent="."]
@@ -631,8 +631,8 @@ __meta__ = {
 size = [ 17, 16 ]
 fruitAmount = 3
 fruitTypes = {
-"carrot": true,
-"waterMelon": true
+"carrot": 50,
+"waterMelon": 50
 }
 unlocked = false
 price = 500

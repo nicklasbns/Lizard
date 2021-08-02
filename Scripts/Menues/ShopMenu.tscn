@@ -93,6 +93,7 @@ margin_right = 512.0
 margin_bottom = 72.0
 text = "Time freeze"
 icon = ExtResource( 7 )
+price = 1000
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Upgrades/HBoxContainer"]
 margin_left = 516.0

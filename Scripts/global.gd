@@ -15,13 +15,11 @@ var curLvl := "Beginner"
 
 var fruits = {
 	"waterMelon": {
-		"dropChance": 50,
 		"nutrition": 1,
 		"value": 1,
 		"image": "res://Assets/Fruits/Watermelon.png"
 	},
 	"carrot": {
-		"dropChance": 40,
 		"nutrition": 1,
 		"value": 2,
 		"image": "res://Assets/Fruits/Carrot.png"

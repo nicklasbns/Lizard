@@ -12,8 +12,10 @@
 
 
 ## Changes
-
-
+- **[Carrots]** can now ocasionally spawn in **[Advanced]**
+- **[Fruit Salad]** name change →  **[Melon madness]**
+- **[Snake]** level price change **(500 → 200)**
+- **[Maze]** level price change **(1000 → 600)**
 
 <br>
 

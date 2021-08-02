@@ -7,8 +7,8 @@ export var size := [15,15]
 export var fruitAmount:int = 1
 
 export var fruitTypes = {
-	"waterMelon":true,
-	"carrot":false,
+	"waterMelon":100,
+	"carrot":0,
 }
 
 export var unlocked:bool = true
@@ -65,12 +65,12 @@ func _process(_delta):
 	if loaded:
 		if $Fruits.get_child_count() < fruitAmount: #If we don't have enough food, then we 
 			for i in fruitTypes.keys():
-				if !fruitTypes[i]: fruitTypes.erase(i) #deleting all the types we haven't selected
+				if fruitTypes[i] == 0: fruitTypes.erase(i) #deleting all the types we haven't selected
 			
 			var selectedFruit
 			var pool := []
 			for fruit in fruitTypes.keys():
-				for i in Global.fruits[fruit].dropChance:
+				for i in fruitTypes[fruit]:
 					pool.push_back(fruit)
 			selectedFruit = pool[randi() % pool.size()]
 			var food:Area2D = load("res://Scripts/Fruit.tscn").instance() #add more
