@@ -517,6 +517,7 @@ __meta__ = {
 }
 fruitTypes = {
 "carrot": 20,
+"egg": 0,
 "waterMelon": 80
 }
 unlocked = false
@@ -631,11 +632,12 @@ __meta__ = {
 size = [ 17, 16 ]
 fruitAmount = 3
 fruitTypes = {
-"carrot": 50,
-"waterMelon": 50
+"carrot": 45,
+"egg": 5,
+"waterMelon": 45
 }
 unlocked = false
-price = 500
+price = 200
 
 [node name="TextureRect" type="TextureRect" parent="Snake"]
 show_behind_parent = true
@@ -691,13 +693,14 @@ __meta__ = {
 "_editor_description_": ""
 }
 size = [ 17, 16 ]
-fruitAmount = 5
+fruitAmount = 6
 fruitTypes = {
-"carrot": true,
-"waterMelon": true
+"carrot": 30,
+"egg": 30,
+"waterMelon": 30
 }
 unlocked = false
-price = 1000
+price = 600
 
 [node name="TextureRect" type="TextureRect" parent="Maze"]
 show_behind_parent = true

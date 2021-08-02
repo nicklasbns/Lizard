@@ -24,6 +24,11 @@ var fruits = {
 		"value": 2,
 		"image": "res://Assets/Fruits/Carrot.png"
 	},
+	"egg": {
+		"nutrition": 2,
+		"value": 5,
+		"image": "res://Assets/Fruits/egg.png"
+	},
 }
 
 #inventory

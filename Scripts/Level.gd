@@ -9,6 +9,7 @@ export var fruitAmount:int = 1
 export var fruitTypes = {
 	"waterMelon":100,
 	"carrot":0,
+	"egg": 0,
 }
 
 export var unlocked:bool = true
