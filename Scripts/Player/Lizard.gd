@@ -5,11 +5,15 @@ var lastMove:Vector2
 var infants:int = 0
 var fruitsEaten:int = 0
 var dead:bool = false
-var justDied:bool = false
+var freezer:bool = false
 func _ready():
 	$Body/Accessory.texture = load("res://Assets/Accessories/" + Global.cosmetics["accessory"] + ".png")
 	$Body/Color.set_modulate(Global.cosmetics["color"])
-	$Timer.start()
+	if "freezer" in Global.upgrades:
+		if Global.upgrades.freezer.enabled:
+			freezer = true
+			$Timer.wait_time = 0.0001
+	else:$Timer.start()
 
 func _on_Timer_timeout():
 	var bodyCount:int = $Body/Color.get_child_count()-1
@@ -55,25 +59,25 @@ func _on_Timer_timeout():
 		$Body/Color.add_child(kid)
 		infants -= 1
 		
-	if !dead: $Timer.start() #after everything is done, we go again
+	if !dead and !freezer: $Timer.start() #after everything is done, we go again
 	
 func _process(_delta): #input for movement
 	var move:Vector2 = direction
 	if Input.is_action_just_pressed("Up"):
 		move = Vector2(0,-64)
-		if justDied:
+		if freezer:
 			$Timer.start()
 	elif Input.is_action_just_pressed("Down"):
 		move = Vector2(0,64)
-		if justDied:
+		if freezer:
 			$Timer.start()
 	elif Input.is_action_just_pressed("Left"):
 		move = Vector2(-64,0)
-		if justDied:
+		if freezer:
 			$Timer.start()
 	elif Input.is_action_just_pressed("Right"):
 		move = Vector2(64,0)
-		if justDied:
+		if freezer:
 			$Timer.start()
 		
 	if ! move == -lastMove: #if the player is stupid enough to go back the way they came

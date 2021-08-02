@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/BackArrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/UI/CosmeticBuyOption.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/UI/ResourceIndicator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Menues/ShopMenu.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/UI/BuyUpgrade.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/snowFlake.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.901961, 0.654902, 0.0705882, 1 )
@@ -67,6 +69,37 @@ margin_top = 63.0
 margin_right = -4.0
 margin_bottom = -4.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Upgrades"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Upgrades/HBoxContainer"]
+margin_right = 512.0
+margin_bottom = 465.0
+rect_min_size = Vector2( 512, 0 )
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="freezer" parent="TabContainer/Upgrades/HBoxContainer/VBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 512.0
+margin_bottom = 72.0
+text = "Time freeze"
+icon = ExtResource( 7 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Upgrades/HBoxContainer"]
+margin_left = 516.0
+margin_right = 1028.0
+margin_bottom = 465.0
+rect_min_size = Vector2( 512, 0 )
+
 [node name="body" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
@@ -81,27 +114,36 @@ margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 25
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/body/VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 480.0
+margin_bottom = 220.0
 custom_constants/separation = 20
 
 [node name="LizardBody" parent="TabContainer/body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 190.0
-margin_bottom = 210.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 230.0
+margin_bottom = 220.0
 unlocked = true
 value = "LizardBody"
 
 [node name="Arrows" parent="TabContainer/body/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_right = 190.0
-margin_bottom = 210.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 250.0
+margin_right = 480.0
+margin_bottom = 220.0
 price = 50
 value = "Arrows"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/body/VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = 245.0
+margin_right = 480.0
+margin_bottom = 245.0
 custom_constants/separation = 20
 
 [node name="color" type="Tabs" parent="TabContainer"]

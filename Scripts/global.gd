@@ -54,6 +54,7 @@ var ownedCosmetics = {
 
 var ownedLevels = {}
 
+var upgrades = {}
 
 var levelMapData = {}
 
@@ -67,6 +68,7 @@ func _saveGame():
 		"ownedLevels": ownedLevels,
 		"levelMapData": levelMapData,
 		"settings": settings,
+		"upgrades": upgrades,
 	}
 	var file = File.new()
 	file.open(saveFile, File.WRITE)

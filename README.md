@@ -3,8 +3,17 @@
 # v 1.0
 
 ## New Content
+- Added upgrade **[Time Freeze]**
 - Added ads to mobile, to double coin gain in level
 - Added ad banner in bottom of level screen
+
+
+<br>
+
+
+## Changes
+
+
 
 <br>
 
