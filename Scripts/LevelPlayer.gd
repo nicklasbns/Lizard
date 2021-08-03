@@ -25,6 +25,8 @@ func _process(_delta):
 func _on_AdMob_rewarded(_currency, _ammount):
 	self.get_node(level.get_name()).get_node("Lizard").coinAgain()
 	$Banner.hide_banner()
+	yield(get_tree(), "physics_frame") #waiting to let sprites load
+	yield(get_tree(), "physics_frame")
 	var _change = get_tree().change_scene("res://Scripts/Menues/mainMenu.tscn")
 
 func _on_AdMob_rewarded_video_loaded():

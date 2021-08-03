@@ -1,5 +1,9 @@
 > # Patch Notes
 
+# v 1.0.1
+## Bugfixes
+- Fixed bug where sprites would turn black just after watching ad
+
 # v 1.0
 
 ## New Content
