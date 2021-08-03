@@ -751,3 +751,108 @@ polygon = PoolVector2Array( -224, -288, -224, 928, 480, 928, 480, 736, 224, 736,
 
 [node name="deathMenu" parent="Maze" instance=ExtResource( 5 )]
 visible = false
+
+[node name="Pyramid" type="Node2D" parent="."]
+position = Vector2( 5056, 1600 )
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+size = [ 22, 17 ]
+fruitAmount = 5
+fruitTypes = {
+"carrot": 40,
+"egg": 60,
+"waterMelon": 0
+}
+unlocked = false
+price = 900
+
+[node name="TextureRect" type="TextureRect" parent="Pyramid"]
+show_behind_parent = true
+margin_left = -672.0
+margin_top = 32.0
+margin_right = 608.0
+margin_bottom = 352.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Pyramid"]
+show_behind_parent = true
+margin_left = -480.0
+margin_top = -288.0
+margin_right = 416.0
+margin_bottom = 32.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Pyramid"]
+show_behind_parent = true
+margin_left = -288.0
+margin_top = -608.0
+margin_right = 224.0
+margin_bottom = -288.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="Pyramid"]
+show_behind_parent = true
+margin_left = -96.0
+margin_top = -736.0
+margin_right = 32.0
+margin_bottom = -608.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spawnpoint" type="Position2D" parent="Pyramid"]
+position = Vector2( -640, -448 )
+
+[node name="TileMap" type="TileMap" parent="Pyramid"]
+position = Vector2( -32, -32 )
+tile_set = SubResource( 48 )
+cell_tile_origin = 1
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -720898, 0, 4, -720897, 0, 196609, -786432, 0, 196609, -786431, 0, 7, -655362, 0, 65539, -720895, 0, 65539, -589827, 0, 4, -589826, 0, 196615, -655359, 0, 196612, -655358, 0, 7, -524292, 0, 4, -524291, 0, 196615, -589822, 0, 196612, -589821, 0, 7, -458756, 0, 65539, -524285, 0, 65539, -393221, 0, 4, -393220, 0, 196615, -458749, 0, 196612, -458748, 0, 7, -327685, 0, 65539, -393212, 0, 65539, -262150, 0, 0, -262149, 0, 131079, -327676, 0, 131076, -327675, 0, 2, -196615, 0, 4, -196614, 0, 196614, -196613, 0, 196613, -196612, 0, 196609, -196611, 0, 196609, -196610, 0, 196610, -262143, 0, 196608, -262142, 0, 196609, -262141, 0, 196609, -262140, 0, 196614, -262139, 0, 196613, -262138, 0, 7, -131079, 0, 65539, -196602, 0, 65539, -65544, 0, 4, -65543, 0, 196615, -131066, 0, 196612, -131065, 0, 7, -8, 0, 65539, -65529, 0, 65539, 65527, 0, 0, 65528, 0, 131079, 7, 0, 131076, 8, 0, 2, 131062, 0, 4, 131063, 0, 196614, 131064, 0, 196613, 131065, 0, 196609, 131066, 0, 196609, 131067, 0, 196609, 131068, 0, 196609, 131069, 0, 196609, 131070, 0, 196610, 65537, 0, 196608, 65538, 0, 196609, 65539, 0, 196609, 65540, 0, 196609, 65541, 0, 196609, 65542, 0, 196609, 65543, 0, 196614, 65544, 0, 196613, 65545, 0, 7, 196598, 0, 65539, 131081, 0, 65539, 262133, 0, 4, 262134, 0, 196615, 196617, 0, 196612, 196618, 0, 7, 327669, 0, 65539, 262154, 0, 65539, 393204, 0, 0, 393205, 0, 131079, 327690, 0, 131076, 327691, 0, 2, 458740, 0, 131072, 458741, 0, 196613, 458742, 0, 196609, 458743, 0, 196609, 458744, 0, 196609, 458745, 0, 196609, 458746, 0, 196609, 458747, 0, 196609, 458748, 0, 196609, 458749, 0, 196609, 458750, 0, 196609, 458751, 0, 196609, 393216, 0, 196609, 393217, 0, 196609, 393218, 0, 196609, 393219, 0, 196609, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 196609, 393223, 0, 196609, 393224, 0, 196609, 393225, 0, 196609, 393226, 0, 196614, 393227, 0, 131074 )
+
+[node name="Fruits" type="Node2D" parent="Pyramid"]
+
+[node name="Camera2D" type="Camera2D" parent="Pyramid"]
+position = Vector2( 0, -128 )
+current = true
+zoom = Vector2( 2.5, 2.5 )
+
+[node name="Control" parent="Pyramid/Camera2D" instance=ExtResource( 4 )]
+visible = false
+margin_top = -32.0
+margin_right = 0.0
+margin_bottom = -32.0
+scale = Vector2( 2.5, 2.5 )
+
+[node name="Map" type="Area2D" parent="Pyramid"]
+position = Vector2( -704, -704 )
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pyramid/Map"]
+position = Vector2( 192, 256 )
+polygon = PoolVector2Array( 416, -288, 416, -160, 352, -160, 352, -96, 288, -96, 288, 32, 224, 32, 224, 160, 416, 160, 416, 224, 96, 224, 96, 352, 32, 352, 32, 480, 416, 480, 416, 544, -96, 544, -96, 672, -160, 672, -160, 800, 1120, 800, 1120, 672, 1056, 672, 1056, 544, 544, 544, 544, 480, 928, 480, 928, 352, 864, 352, 864, 224, 544, 224, 544, 160, 736, 160, 736, 32, 672, 32, 672, -96, 608, -96, 608, -160, 544, -160, 544, -288 )
+
+[node name="deathMenu" parent="Pyramid" instance=ExtResource( 5 )]
+visible = false

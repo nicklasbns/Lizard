@@ -1,5 +1,10 @@
 > # Patch Notes
 
+# v 1.1
+
+## New Content
+- Added new level **[Pyramid]**
+
 # v 1.0.1
 ## Bugfixes
 - Fixed scaling on level **[Snake]**
