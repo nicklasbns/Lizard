@@ -3,6 +3,7 @@
 # v 1.0.1
 ## Bugfixes
 - Fixed bug where sprites would turn black just after watching ad
+- Fixed bug where coin indicator sometimes would go out of place
 
 # v 1.0
 
