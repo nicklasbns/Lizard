@@ -2,8 +2,10 @@
 
 # v 1.0.1
 ## Bugfixes
-- Fixed bug where sprites would turn black just after watching ad
-- Fixed bug where coin indicator sometimes would go out of place
+- Fixed scaling on level **[Snake]**
+- Fixed scaling on mobile controller
+
+<br>
 
 # v 1.0
 
@@ -13,9 +15,7 @@
 - Added ad banner in bottom of level screen
 - Added new food **[Egg]**
 
-
 <br>
-
 
 ## Changes
 - **[Carrots]** can now ocasionally spawn in **[Advanced]**
@@ -25,10 +25,11 @@
 
 <br>
 
-
 ## Bugfixes
 - Fixed bug where **[clown nose]** wouldn't be bought
 - Fixed bug where coin indicator would move out of the side
+
+<br>
 
 # v 0.6
 
@@ -39,24 +40,18 @@
 - Added accessory **[Halloween mask]**
 - Added face **[Cyclops]**
 
-
 <br>
-
 
 ## Minor improvements
 - body now rotates with you when you move around
 
-
 <br>
-
 
 ## Bugfixes
 - fixed bug where fruits could stack
 - [Mobile] fixed bug where you coudn't change side of controls
 
-
 <br>
-
 
 # v 0.5
 ## New Content
@@ -77,17 +72,13 @@
 ## Minor improvements
 - Coin indicator is now visible while playing a level
 
-
 <br>
-
 
 ## Bug Fixes
 - Fruits are no longer visible over the death menu
 - You will no longer have to buy items again after revisiting 
 
-
 <br>
-
 
 # v 0.4
 ## New Content

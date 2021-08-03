@@ -668,12 +668,13 @@ tile_data = PoolIntArray( -458761, 0, 4, -458760, 0, 196609, -458759, 0, 196609,
 [node name="Camera2D" type="Camera2D" parent="Snake"]
 position = Vector2( 0, 32 )
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 2.4, 2.4 )
 
 [node name="Control" parent="Snake/Camera2D" instance=ExtResource( 4 )]
 margin_top = -32.0
 margin_right = 0.0
 margin_bottom = -32.0
+scale = Vector2( 2.4, 2.4 )
 
 [node name="Map" type="Area2D" parent="Snake"]
 position = Vector2( -512, -448 )
