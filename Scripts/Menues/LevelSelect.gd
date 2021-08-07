@@ -41,14 +41,23 @@ func _ready():
 		if !level.unlocked: text.text += "\n\nprice: " + str(level.price) 
 		text.set_mouse_filter(1)
 		
-		butVBox.get_child(1).add_child(text)
+		butVBox.get_child(0).add_child(text)
 		
-		#makes images
-		var textRect := TextureRect.new()
-		textRect.texture = load("res://icon.png") #placeholder image
-		textRect.set_mouse_filter(1)
+		#makes score text
+		var scoreLabel := Label.new()
+		if Global.highScore.keys().has(level.get_name()):
+			scoreLabel.text = "High score: " + str(Global.highScore[level.get_name()])
+		else:
+			scoreLabel.text = ""
+		scoreLabel.rect_min_size.y = butVBox.rect_min_size.y/4
+		scoreLabel.set_mouse_filter(1)
 		
-		butVBox.get_child(0).add_child(textRect)
+		var font = DynamicFont.new()
+		font.font_data = load("res://Assets/OpenSans-Regular.ttf")
+		font.size = 64
+		
+		scoreLabel.add_font_override("normal_font", font)
+		butVBox.get_child(1).add_child(scoreLabel)
 		
 		button.add_child(butVBox)
 		hBox.add_child(button)

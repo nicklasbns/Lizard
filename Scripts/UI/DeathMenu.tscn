@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/DeathMenu.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 1 )
 
@@ -39,23 +39,23 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
-margin_top = 122.0
+margin_top = 97.0
 margin_right = 1024.0
-margin_bottom = 422.0
+margin_bottom = 447.0
 rect_min_size = Vector2( 0, 300 )
 alignment = 1
 
 [node name="Tekst" type="RichTextLabel" parent="ColorRect/VBoxContainer/HBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 1024, 300 )
-custom_fonts/normal_font = SubResource( 1 )
+margin_bottom = 350.0
+rect_min_size = Vector2( 1024, 350 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
-margin_top = 426.0
+margin_top = 451.0
 margin_right = 1024.0
-margin_bottom = 477.0
+margin_bottom = 502.0
 custom_constants/separation = 128
 alignment = 1
 

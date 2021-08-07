@@ -91,11 +91,15 @@ func death(levelName): #if we die, then we load the death menu,
 	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] You died\n\n But you earned " + str(fruitsEaten) + " coins")
 	deathMenu.visible = true
 	$Timer.stop()
-	Global._saveGame()
 	if !Global.highScore.keys().has(levelName):
+		print("fisk")
 		Global.highScore[levelName] = fruitsEaten
+		deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] New highscore!! \nYou died\n But you earned " + str(fruitsEaten) + " coins")
 	elif Global.highScore[levelName] < fruitsEaten:
+		print("kage")
 		Global.highScore[levelName] = fruitsEaten
+		deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] New highscore!! \nYou died\n But you earned " + str(fruitsEaten) + " coins")
+	Global._saveGame()
 
 func coinAgain():
 	Global.currencies["coins"] += fruitsEaten

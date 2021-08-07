@@ -3,8 +3,10 @@
 # v 1.1
 
 ## New Content
+- Added personal high scores
 - Added new level **[Pyramid]**
 - Added new food **[Cheese]**
+
 
 # v 1.0.1
 ## Bugfixes
