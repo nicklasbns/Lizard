@@ -39,7 +39,7 @@ func _on_Timer_timeout():
 	#If you have slammed head in a wall or a body, then you are dead, but if its an edible, then you are pregnant
 	for area in head.get_overlapping_areas():
 		if area.get_collision_layer_bit(0):
-			death()
+			death(area.get_parent().get_name())
 		elif area.get_collision_layer_bit(2):
 			infants += area.nutrition
 			fruitsEaten += area.value
@@ -50,7 +50,7 @@ func _on_Timer_timeout():
 	#Tilemaps are bodies and not areas
 	for body in head.get_overlapping_bodies():
 		if body.get_collision_layer_bit(1):
-			death()
+			death(body.get_parent().get_name())
 	
 	if infants > 0: #if we're expecting, then a kid is born once every move
 		var kid = load("res://Scripts/Player/BodyPart.tscn").instance()
@@ -85,13 +85,17 @@ func _process(_delta): #input for movement
 	
 	
 	
-func death(): #if we die, then we load the death menu, 
+func death(levelName): #if we die, then we load the death menu, 
 	dead = true#gain coins equal to fruits gained and kill player
 	var deathMenu:Control = self.get_parent().get_node("deathMenu")
 	deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] You died\n\n But you earned " + str(fruitsEaten) + " coins")
 	deathMenu.visible = true
 	$Timer.stop()
 	Global._saveGame()
+	if !Global.highScore.keys().has(levelName):
+		Global.highScore[levelName] = fruitsEaten
+	elif Global.highScore[levelName] < fruitsEaten:
+		Global.highScore[levelName] = fruitsEaten
 
 func coinAgain():
 	Global.currencies["coins"] += fruitsEaten

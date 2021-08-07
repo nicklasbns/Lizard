@@ -29,7 +29,14 @@ var fruits = {
 		"value": 5,
 		"image": "res://Assets/Fruits/egg.png"
 	},
+	"cheese": {
+		"nutrition": 3,
+		"value": 8,
+		"image": "res://Assets/Fruits/cheese.png"
+	},
 }
+
+var highScore = {}
 
 #inventory
 
@@ -72,6 +79,7 @@ func _saveGame():
 		"levelMapData": levelMapData,
 		"settings": settings,
 		"upgrades": upgrades,
+		"highScore": highScore,
 	}
 	var file = File.new()
 	file.open(saveFile, File.WRITE)
