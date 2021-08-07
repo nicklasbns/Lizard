@@ -4,6 +4,7 @@
 
 ## New Content
 - Added new level **[Pyramid]**
+- Added new food **[Cheese]**
 
 # v 1.0.1
 ## Bugfixes

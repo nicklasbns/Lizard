@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/UI/BackArrow.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scripts/Menues/ShopMenu.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/UI/BuyUpgrade.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/snowFlake.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/UI/BuyValueUpgrade.tscn" type="PackedScene" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.901961, 0.654902, 0.0705882, 1 )
@@ -62,7 +63,6 @@ __meta__ = {
 }
 
 [node name="Upgrades" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -101,6 +101,8 @@ margin_left = 516.0
 margin_right = 1028.0
 margin_bottom = 465.0
 rect_min_size = Vector2( 512, 0 )
+
+[node name="Control" parent="TabContainer/Upgrades/HBoxContainer/VBoxContainer2" instance=ExtResource( 8 )]
 
 [node name="body" type="Tabs" parent="TabContainer"]
 visible = false
@@ -149,6 +151,7 @@ margin_bottom = 245.0
 custom_constants/separation = 20
 
 [node name="color" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0

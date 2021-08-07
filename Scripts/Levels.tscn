@@ -762,7 +762,8 @@ size = [ 22, 17 ]
 fruitAmount = 5
 fruitTypes = {
 "carrot": 40,
-"egg": 60,
+"cheese": 10,
+"egg": 50,
 "waterMelon": 0
 }
 unlocked = false

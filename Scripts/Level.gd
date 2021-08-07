@@ -10,6 +10,7 @@ export var fruitTypes = {
 	"waterMelon":100,
 	"carrot":0,
 	"egg": 0,
+	"cheese": 0,
 }
 
 export var unlocked:bool = true
