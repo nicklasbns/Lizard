@@ -13,7 +13,7 @@ func _ready():
 		if Global.upgrades.freezer.enabled:
 			freezer = true
 			$Timer.wait_time = 0.0001
-	else:$Timer.start()
+		else:$Timer.start()
 
 func _on_Timer_timeout():
 	var bodyCount:int = $Body/Color.get_child_count()-1
@@ -92,11 +92,9 @@ func death(levelName): #if we die, then we load the death menu,
 	deathMenu.visible = true
 	$Timer.stop()
 	if !Global.highScore.keys().has(levelName):
-		print("fisk")
 		Global.highScore[levelName] = fruitsEaten
 		deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] New highscore!! \nYou died\n But you earned " + str(fruitsEaten) + " coins")
 	elif Global.highScore[levelName] < fruitsEaten:
-		print("kage")
 		Global.highScore[levelName] = fruitsEaten
 		deathMenu.get_node("ColorRect/VBoxContainer/HBoxContainer/Tekst").set_bbcode("[center] New highscore!! \nYou died\n But you earned " + str(fruitsEaten) + " coins")
 	Global._saveGame()

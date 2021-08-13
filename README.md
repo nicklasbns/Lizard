@@ -1,5 +1,11 @@
 > # Patch Notes
 
+# v 1.1.1
+
+## Bugfixes
+- Fixed bug where fruits didn't spawn in some places
+- Fixed bug where player would spawn outside level in **[Pyramid]**
+
 # v 1.1
 
 ## New Content

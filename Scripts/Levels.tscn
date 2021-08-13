@@ -693,7 +693,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-size = [ 17, 16 ]
+size = [ 23, 19 ]
 fruitAmount = 6
 fruitTypes = {
 "carrot": 30,
@@ -822,7 +822,7 @@ __meta__ = {
 }
 
 [node name="Spawnpoint" type="Position2D" parent="Pyramid"]
-position = Vector2( -640, -448 )
+position = Vector2( -64, -128 )
 
 [node name="TileMap" type="TileMap" parent="Pyramid"]
 position = Vector2( -32, -32 )
@@ -840,7 +840,6 @@ current = true
 zoom = Vector2( 2.5, 2.5 )
 
 [node name="Control" parent="Pyramid/Camera2D" instance=ExtResource( 4 )]
-visible = false
 margin_top = -32.0
 margin_right = 0.0
 margin_bottom = -32.0
