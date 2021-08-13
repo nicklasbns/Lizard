@@ -71,6 +71,7 @@ banner_on_top = false
 banner_size = "BANNER"
 banner_id = "ca-app-pub-1885419653497441/5174712851"
 is_personalized = false
+
 [connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
 [connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
 [connection signal="banner_loaded" from="Banner" to="." method="_on_Banner_banner_loaded"]
