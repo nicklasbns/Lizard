@@ -41,6 +41,9 @@ Global="*res://Scripts/global.gd"
 
 [debug]
 
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unreachable_code=false
+gdscript/warnings/return_value_discarded=false
 gdscript/warnings/integer_division=false
 
 [display]
