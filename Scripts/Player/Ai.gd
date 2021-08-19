@@ -13,6 +13,7 @@ var reset = [0, false] #when to stop pressing
 var dir = ["Up", "Right", "Down", "Left"]
 var action = 0 #what way do we turn?
 var temp = 0
+var font = load("res://assets/font.tres")
 
 func _ready():
 	main = self.get_parent().get_parent().get_parent().get_parent()
@@ -25,9 +26,13 @@ func _ready():
 	get_parent().get_parent().get_child(1).connect("timeout", self, "step");
 
 	for elem in mapPos:
-		map.push_back([elem, -1, -1, -1, -1])
-		if map[-1][0] == snake.get_child(1).position:
-			pos = [len(map), 2]
+		map.push_back([elem, -1, -1, -1, -1, 0])
+		if map[-1][0].x == snake.get_child(0).position.x:
+			if map[-1][0].y == snake.get_child(0).position.y:
+				pos = [len(map)-1, 2]
+			for i in len(snake.get_children()):
+				if snake.get_child(i).position.y == map[-1][0].y:
+					map[len(map)-1][5] = len(snake.get_children())-i
 	for i in len(map):
 		for j in len(map):
 			if map[i][0].x == map[j][0].x:
@@ -57,19 +62,20 @@ func step(): # the main calculator
 	var rotation = round(snake.get_child(0).rotation*2/PI)+2
 	print(rotation)
 	pos = [map[pos[0]][rotation+1], rotation]
+	map[pos[0]][5] = len(snake.get_children())
 	var diff = Vector2(0, 0)
 	diff = fruits.get_children()[0].position-map[pos[0]][0]
 	print(diff)
-	if abs(diff.x) > abs(diff.y):
-		if diff.x > 0:
-			go(1)
-		else:
-			go(3)
-	else:
-		if diff.y > 0:
-			go(2)
-		else:
-			go(0)
+	# if abs(diff.x) > abs(diff.y):
+	# 	if diff.x > 0:
+	# 		go(1)
+	# 	else:
+	# 		go(3)
+	# else:
+	# 	if diff.y > 0:
+	# 		go(2)
+	# 	else:
+	# 		go(0)
 	self.update()
 
 func _draw():
@@ -77,14 +83,22 @@ func _draw():
 	self.draw_line(Vector2(20, 20), 
 				   Vector2(200, 20), Color(1, 0.4, 0.4))
 	for i in map:
-		self.draw_circle(i[0], 20, Color(0.4, 0.4, 1))
+		self.draw_circle(i[0], 20, Color.from_hsv(i[5]*0.2, 1, 0.6))
 		for j in 4:
 			if i[j+1] != -1:
 				self.draw_line(i[0], map[i[j+1]][0], Color(0.2, 0.7, 0.2))
+		i[5] = max(i[5]-1, 0)  # fix when a fruit is eaten
 	for part in snake.get_children():
 		self.draw_circle(part.position, 10, Color(1, 0.4, 0.4))
+	for i in map:
+		self.draw_string(font, i[0], str(i[5]), Color(0xff))
 	self.draw_rect(Rect2(map[pos[0]][0]+Vector2(-15, -15), Vector2(30, 30)), Color(0xff), true)
+	# self.draw_rect(Rect2(-400, -400, 800, 800), Color(0xff), true)
+	# self.draw_string(font, Vector2(0, 0), str()", 0")
 	self.draw_line(Vector2(-500, -500), Vector2(-500, -500)+Vector2(50, 0).rotated(action*PI), Color(0xff), 2)
+	pass
+
+func djikstra():
 	pass
 
 
